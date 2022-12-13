@@ -1,0 +1,15 @@
+.footer-body {
+    background: #212121;
+    padding: 6.5vw 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.diva-big-logo-img {
+    width: 30vw;
+}
+
+.contact {
+    color: white;
+}

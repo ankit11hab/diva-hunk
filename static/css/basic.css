@@ -1,0 +1,36 @@
+* {
+    
+}
+
+body {
+    margin: 0;
+}
+
+.intro {
+    position: -webkit-sticky;
+    position: sticky;
+    top:4.1vw;
+    z-index: -1;
+    overflow-y: hidden;
+}
+
+.hero-section {
+    height: 80vh;
+    margin: 2vw 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img {
+    height: 100%;
+}
+
+.scroll-down {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-down-img {
+    width: 17vw;
+    margin-bottom: 2vw;
+}
