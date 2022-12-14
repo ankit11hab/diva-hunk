@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from .models import Diva, Hunk, Voter 
 
 # Create your views here.
 def home(request):
-    return render(request, 'base/home.html')
+    divas = Diva.objects.all()
+    hunks = Hunk.objects.all()
+    context = {
+        divas: divas,
+        hunks: hunks
+    }
+    return render(request, 'base/home.html', context)
