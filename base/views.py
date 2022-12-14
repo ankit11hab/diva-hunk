@@ -10,3 +10,10 @@ def home(request):
         hunks: hunks
     }
     return render(request, 'base/home.html', context)
+
+
+def divaHunkList(request):
+    genderquery = request.GET.get('category') or 'diva'
+    searchquery = request.GET.get('search')
+    print(genderquery, searchquery)
+    return render(request, 'base/list.html')
