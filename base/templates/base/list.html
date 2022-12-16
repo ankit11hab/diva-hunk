@@ -1,7 +1,21 @@
-{% extends 'base/basic.html' %}
-{% load static %}
-{% block content %}
-<div class="intro">
-    
-</div>
+{% extends 'base/basic.html' %} {% load static %} {% block content %}
+<form method="GET" action="">
+  {% csrf_token %}
+  <input type="search" name="search" />
+  <button type="submit" name="Diva">Divas</button>
+  <button type="submit" name="Hunk">Hunks</button>
+  <button type="submit">Search</button>
+</form>
+<div style="color: red; font-size: 30px">{{message}}</div>
+<ul>
+  {% for item in diva %}
+  <li>
+    <a href="{% url 'diva register' item.id %}">{{item.name}}</a>
+  </li>
+  {%endfor%} {% for item in hunk %}
+  <li>
+    <a href="{% url 'hunk register' item.id %}">{{item.name}}</a>
+  </li>
+  {%endfor%}
+</ul>
 {% endblock %}
