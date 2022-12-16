@@ -21,7 +21,7 @@ class Hunk(models.Model):
 class Voter(models.Model):
     name =  models.CharField(max_length = 100, blank = True)
     contact = models.CharField(max_length = 14, blank = True)
-    email = models.EmailField(blank = True)
+    email = models.EmailField(blank=True)
     otp =  models.CharField(max_length = 4, blank = True, null = True)
     diva = models.ForeignKey(Diva, on_delete = models.CASCADE, blank = True, null=True)
     hunk = models.ForeignKey(Hunk, on_delete = models.CASCADE, blank = True, null=True)

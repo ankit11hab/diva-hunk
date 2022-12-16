@@ -1,12 +1,23 @@
-{% extends 'base/basic.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base/basic.html' %} {% load static %} {% block content %}
 <div class="intro">
-    <div class="hero-section">
-        <img src = "{% static '/images/hero.svg' %}" class="hero-img" />
-    </div>
-    <div class="scroll-down">
-        <img src = "{% static '/images/scroll_down.svg' %}" class="scroll-down-img" />
-    </div>
+  <div class="hero-section">
+    <img src="{% static '/images/hero.svg' %}" class="hero-img" />
+  </div>
+  <div class="scroll-down">
+    <img src="{% static '/images/scroll_down.svg' %}" class="scroll-down-img" />
+  </div>
+</div>
+
+<div>
+  <ul>
+    {% for diva in divas %}
+    <li><a href="{% url 'diva register' diva.id %}">{{diva.name}}</a></li>
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for hunk in hunks %}
+    <li><a href="{% url 'hunk register' hunk.id %}">{{hunk.name}}</a></li>
+    {% endfor %}
+  </ul>
 </div>
 {% endblock %}

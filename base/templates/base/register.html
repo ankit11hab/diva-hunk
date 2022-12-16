@@ -1,0 +1,26 @@
+{% extends 'base/basic.html' %} {% load static %} {% block content %}
+<div style="font-size: 30px">Voting for {{candidate.name}}</div>
+<div style="color: red; font-size: 30px">{{message}}</div>
+<form method="POST" style="font-size: 30px">
+  {% csrf_token %}
+  <div>
+    <label class="" for="exampleInputUser">Name</label>
+    {{form.name}}
+  </div>
+  <div>
+    <label for=" exampleInputEmail">Contact No.</label>
+    {{form.contact}}
+  </div>
+  <div>
+    <label for=" exampleInputPassword1">E-mail</label>
+    {{form.email}}
+  </div>
+  <div>
+    <label for=" exampleInputPassword2">OTP</label>
+    {{form.otp}}
+    <button type="submit" name="sendOTP">Send OTP</button>
+  </div>
+  <button type="submit" name="verify">Register</button>
+</form>
+
+{% endblock %}
