@@ -26,8 +26,8 @@ def divaHunkList(request):
     }
     searchquery = request.GET.get('search')
     if searchquery!=None and searchquery!="":
-        searchDiva=Diva.objects.filter(name__contains=searchquery)
-        searchHunk=Hunk.objects.filter(name__contains=searchquery)
+        searchDiva=Diva.objects.filter(name__icontains=searchquery)
+        searchHunk=Hunk.objects.filter(name__icontains=searchquery)
         if searchDiva:
             context.update(diva=searchDiva)
         elif searchHunk:
