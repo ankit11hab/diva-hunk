@@ -1,15 +1,94 @@
-.footer-body {
-    background: #212121;
-    padding: 6.5vw 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+@import url(//db.onlinewebfonts.com/c/deb32b91d90407c8527dfeaac14994d6?family=Aileron);
+
+.footer-body-wide {
+  background: #212121;
+  padding: 6.5vw 5vw;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .diva-big-logo-img {
-    width: 30vw;
+  width: 30vw;
 }
 
-.contact {
-    color: white;
+.contacts-wide {
+  color: #fefcf0;
+  font-family: "Aileron";
+  text-align: right;
+  align-items: flex-end;
+  font-size: 100%;
+}
+
+.contactme {
+  font-size: 1.3vw;
+}
+
+.contactme2 {
+  margin-top: 8%;
+}
+
+.contactme-mob {
+  display: none;
+}
+
+.icons {
+  margin-top: 25%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 40%;
+}
+
+.icon-imgs {
+  padding-left: 10%;
+  width: 2.2vw;
+  height: auto;
+}
+
+.mail {
+  margin-top: 2vw;
+  font-size: 1.3vw;
+}
+
+@media (max-width: 550px) {
+  .diva-big-logo-img {
+    width: 80vw;
+  }
+  .footer-body-wide {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .contacts-wide {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 10%;
+    margin-left: 7%;
+  }
+  .contactme {
+    display: none;
+  }
+  .contactme-mob {
+    display: block;
+    font-size: 4vw;
+  }
+  .contactme2-mob {
+    margin-top: 8%;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    width: 75vw;
+    margin-left: -8%;
+    margin-top: 10%;
+  }
+  .icon-imgs {
+    align-items: flex-start;
+    width: 15vw;
+    height: auto;
+  }
+  .mail {
+    margin-top: 10%;
+    font-size: 3vw;
+  }
 }
