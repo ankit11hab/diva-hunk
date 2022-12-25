@@ -152,6 +152,8 @@ def hunkRegistration(request, pk):
     context.update(form=form)
     return render(request, 'base/register.html', context)
 
+def thanksdiva(request):
+    return render(request, 'base/thanks_diva.html')
 
-def thanks(request):
-    return render(request, 'base/thanks.html')
+def thankshunk(request):
+    return render(request, 'base/thanks_hunk.html')
