@@ -1,26 +1,183 @@
 {% extends 'base/basic.html' %} {% load static %} {% block content %}
-<div style="font-size: 30px">Voting for {{candidate.name}}</div>
+
+<!-- <div style="font-size: 30px">Voting for {{candidate.name}}</div> -->
+
+<link rel="stylesheet" href="{% static '/css/register.css' %}" />
 <div style="color: red; font-size: 30px">{{message}}</div>
 <form method="POST" style="font-size: 30px">
   {% csrf_token %}
-  <div>
-    <label class="" for="exampleInputUser">Name</label>
-    {{form.name}}
+  <div style="display: flex; font-family: 'Circular Std Book'; margin-left: 10%; margin-top: 2%;">
+    <img src="{% static '/images/Chevron-left.svg' %}" />
+    <h3 style="font-weight: 200;">Back</h3>
   </div>
-  <div>
-    <label for=" exampleInputEmail">Contact No.</label>
-    {{form.contact}}
+  <div class="form-wide">
+    <img src="{% static '/images/diva-img.png' %}" class="diva-img" />
+    <div class="registerForm">
+      <div class="candidate-detail">
+        <div class="heading">
+          <h4>Diva’s Name</h4>
+        </div>
+        <div class="diva-name">
+          <h2>{{candidate.name}}</h2>
+          <button type="button" class="sharebtn">
+            Share Link
+            <img
+              src="{% static '/images/ShareLink.png' %}"
+              class="share-link-img"
+            />
+          </button>
+        </div>
+        <div class="institute">Institute: IIT Guwahati</div>
+      </div>
+      <div class="instruction">
+        Please enter the required info to prevent multiple votes <br />We will
+        send an OTP to te entered Email for verification
+      </div>
+      <div class="input-topic">
+        <div class="label" for="exampleInputUser">Your Name</div>
+        <input type="text" class="input input1" />
+        <!-- {{form.name}} -->
+      </div>
+      <div class="input-topic">
+        <div class="label" for=" exampleInputEmail">Contact No.</div>
+        <input type="text" class="input input1" />
+        <!-- {{form.contact}} -->
+      </div>
+      <div class="input-topic">
+        <div class="label" for=" exampleInputPassword1">E-mail</div>
+        <div style="display: flex">
+          <input type="text" class="input input2" />
+          <!-- {{form.email}} -->
+
+          <button type="submit" name="sendOTP" class="sendOTPbtn">
+            Send OTP
+          </button>
+        </div>
+      </div>
+      <div class="label" for=" exampleInputPassword2">OTP</div>
+      <div class="otp-input input-topic">
+        <input
+          type="text"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          maxlength="1"
+          class="input otp-input"
+        />
+        <input
+          type="text"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          maxlength="1"
+          class="input otp-input"
+        />
+        <input
+          type="text"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          maxlength="1"
+          class="input otp-input"
+        />
+        <input
+          type="text"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          maxlength="1"
+          class="input otp-input"
+        />
+        <!-- {{form.otp}} -->
+        <button type="submit" name="verify" class="finish-btn">
+          Finish
+          <img
+            src="{% static '/images/Chevron-right.svg' %}"
+            class="chevron-right-img"
+          />
+        </button>
+      </div>
+    </div>
   </div>
-  <div>
-    <label for=" exampleInputPassword1">E-mail</label>
-    {{form.email}}
-  </div>
-  <div>
-    <label for=" exampleInputPassword2">OTP</label>
-    {{form.otp}}
-    <button type="submit" name="sendOTP">Send OTP</button>
-  </div>
-  <button type="submit" name="verify">Register</button>
 </form>
+
+<div class="form-mob" id="form-mob">
+  <!-- <div style="display: flex; font-family: 'Circular Std Book'; float: left; margin-left: -50%; margin-top: 5%;">
+    <img src="{% static '/images/Chevron-left.svg' %}" />
+    <h1 style="font-weight: 200;">Back</h1>
+  </div> -->
+  <div style="position: relative">
+    <img src="{% static '/images/diva-img.png' %}" class="diva-img" />
+    <button type="button" class="sharelinkbtn-mob">Share Link</button>
+  </div>
+  <div class="candidate-detail">
+    <div class="heading">
+      <h4>Diva’s Name</h4>
+    </div>
+    <div class="diva-name">
+      <h1>{{candidate.name}}</h1>
+    </div>
+    <div class="institute">Institute: IIT Guwahati</div>
+  </div>
+  <div class="instruction">
+    Please enter the required info to prevent multiple votes <br />We will send
+    an OTP to te entered Email for verification
+  </div>
+  <div style="width: 95vw; margin-left: 5vw; margin-top: 8vw; width: 80vw;">
+    <div class="input-topic">
+      <div class="label" for="exampleInputUser">Your Name</div>
+      <input type="text" class="input input1" />
+      <!-- {{form.name}} -->
+    </div>
+    <div class="input-topic">
+      <div class="label" for=" exampleInputEmail">Contact No.</div>
+      <input type="text" class="input input1" />
+      <!-- {{form.contact}} -->
+    </div>
+    <div class="input-topic">
+      <div class="label" for=" exampleInputPassword1">E-mail</div>
+      <div>
+        <input type="text" class="input input2" />
+        <!-- {{form.email}} -->
+      </div>
+      <button type="submit" name="sendOTP" class="sendOTPbtn">Send OTP</button>
+    </div>
+    <div class="label" for=" exampleInputPassword2">OTP</div>
+    <div class="otp-input input-topic">
+      <input
+        type="text"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        maxlength="1"
+        class="input otp-input"
+      />
+      <input
+        type="text"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        maxlength="1"
+        class="input otp-input"
+      />
+      <input
+        type="text"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        maxlength="1"
+        class="input otp-input"
+      />
+      <input
+        type="text"
+        pattern="[0-9]*"
+        inputmode="numeric"
+        maxlength="1"
+        class="input otp-input"
+      />
+      <!-- {{form.otp}} -->
+    </div>
+    <button type="submit" name="verify" class="finish-btn">
+      Finish
+      <!-- <img
+        src="{% static '/images/Chevron-right.svg' %}"
+        class="chevron-right-img"
+      /> -->
+    </button>
+  </div>
+</div>
 
 {% endblock %}
