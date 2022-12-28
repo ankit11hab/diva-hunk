@@ -102,11 +102,12 @@
 .sendOTPbtn {
   margin-left: 3%;
   margin-top: 0.2%;
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   background-color: #ffffff;
   width: 8vw;
   height: 2.8vw;
   border-radius: 0.8vw;
+  border: 2px solid #000000;
 }
 
 .otp-input {
@@ -165,7 +166,8 @@
     font-family: 'Circular Std Book';
     top: 5%;
     left: 60%;
-    border-radius: 2vw;
+    border: 1px solid #ffffff;
+    border-radius: 1.6vw;
     width: 22vw;
     height: 7vw;
   }
@@ -206,6 +208,7 @@
     font-weight: 700;
     border-radius: 2vw;
     margin-bottom: 2%;
+    border: 1px solid #000000;
   }
   .otp-input input[type="text"] {
     margin-top: 3%;
@@ -222,6 +225,6 @@
     border-radius: 2vw;
     height: 8vw;
     width: 70vw;
-
+    border: .1px solid #000000;
   }
 }

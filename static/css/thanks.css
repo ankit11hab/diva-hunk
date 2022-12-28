@@ -92,7 +92,7 @@
   }
   .thanks_mob {
     display: block;
-    width: 100vw;
+    /* width: 100vw; */
   }
   #thanks_mob {
     display: flex;
@@ -100,9 +100,11 @@
   }
   .alcherlogo {
     width: 100vw;
+    transform: scale(1.15,1.1);
   }
   .left_mob {
     font-family: "Star Guard";
+    width: 100vw;
     font-weight: bold;
     color: #ffffff;
     -webkit-text-stroke: 1px #000000;
@@ -113,10 +115,17 @@
     text-shadow: 0px 2.5px 0px #000000;
     font-size: 8vw;
     margin-left: 20%;
+    position: relative;
+    left: 17%;
+  }
+  .left-text1 {
+    position: absolute;
+    left: 1%;
+    top: -35%;
   }
   .left-text2 {
-    left: 90%;
-    margin-top: -10%;
+    left: 75%;
+    margin-top: -8%;
   }
   .right_mob {
     width: 100vw;
