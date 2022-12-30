@@ -20,9 +20,16 @@ body {
     display: flex;
     justify-content: center;
 }
-
+.hero-section-mob{
+    height: 90vh;
+ width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 .hero-img {
     height: 100%;
+ width: 100vw;
+
 }
 
 .scroll-down {
@@ -33,4 +40,26 @@ body {
 .scroll-down-img {
     width: 17vw;
     margin-bottom: 2vw;
+}
+@media screen and (max-width:700px){
+
+    .scroll-down-img {
+        width: 40vw;
+        margin-top: 4vw;
+    }
+}
+@media screen and (max-width:410px){
+    .hero-section {
+ display: none;
+    }
+    .scroll-down-img {
+        width: 60vw;
+        margin-top: 4vw;
+    }
+}
+@media screen and (min-width:411px){
+    .hero-section-mob {
+ display: none;
+    }
+
 }
