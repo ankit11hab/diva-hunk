@@ -1,6 +1,10 @@
 @import url(//db.onlinewebfonts.com/c/deb32b91d90407c8527dfeaac14994d6?family=Aileron);
 
 .footer-body-wide {
+  height: 100vh;
+  position: sticky;
+  top:0;
+  box-sizing: border-box;
   background: #212121;
   padding: 6.5vw 5vw;
   display: flex;
