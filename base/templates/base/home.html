@@ -28,7 +28,7 @@
 
     .largest-box {
       position: sticky;
-      top:0;
+      top:-10vh;
       background-color: #333333;
       width: 99vw;
       height: 100vh;
@@ -50,6 +50,7 @@
     .diva-scroller {
       overflow: visible;
       overflow-y: scroll;
+      overflow-x: hidden;
       height: 100%;
       width: 21%;
       /* scroll-snap-type: y mandatory; */
@@ -68,6 +69,7 @@
     .hunk-scroller {
       overflow: visible;
       overflow-y: scroll;
+      overflow-x: hidden;
       height: 100%;
       width: 21%;
       scroll-snap-type: y mandatory;
@@ -320,7 +322,11 @@
     }
 
     .largest-box {
-      overflow: hidden;
+      /* overflow: hidden; */
+      position: sticky;
+      top: -44vh;
+      width: 99vw;
+      height: 160vh;
     }
 
     .content-container {

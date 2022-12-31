@@ -31,6 +31,7 @@
         background-color: #333333;
         width: 100vw;
         height: 100vh;
+        padding-top: 3vw;
       }
 
       .content-container {
@@ -92,17 +93,21 @@
       }
 
       .searchbox_input{
-      top: 2vw;
-      width: 40vw;
-      /* height: auto; */
+        text-align: center;        
+        top: 2vw;
+        width: 40vw;
+        /* height: auto; */
+        font-size: 1vw;
+        border: none;
+        padding: 0.5vw 0;
+        border-radius: 0.2vw;
+        outline: none;
+      }
+      .searchbox_input::placeholder{
+      font-size: large;
+      font-weight: bold;
       font-size: 1vw;
 
-      padding: 0.5vw 0;
-
-      border-radius: 0.2vw;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      opacity: 0.4;
     }
 
       /* ##########################################################
@@ -195,6 +200,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        font-size: 1.3vw;
       }
 
       /* slide the switch box from right to left */
@@ -223,6 +229,9 @@
         .switch
         div:nth-of-type(2) {
         opacity: 1;
+      }
+      .label_diva_hunk{
+        font-size: 1.3vw;
       }
 
       /* ################################################################# */
@@ -342,6 +351,10 @@
 
       .largest-box {
         overflow: hidden;
+        margin: 10vw 0;
+        position: sticky;
+        top: 0;
+        height: auto;
       }
 
       .top-alldiva {
@@ -364,20 +377,21 @@
       }
 
       #searchbox {
-        margin-top: 2vw;
+        /* margin-top: 2vw; */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          border-radius: 0.8vw;
       }
       .searchbox_input {
         width: 85vw;
+        border: none;
         top: 2vw;
         text-align: center;
         /* padding: 0.8vw 0;  */
-        border-radius: 0.8vw;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
         opacity: 0.4;
     }
     .searchbox_input::placeholder{
-        font-size: 5vw;
+        font-size: 3vw;
     }
 
       /* ##########################################################
@@ -416,7 +430,7 @@
         padding: 0;
         position: relative;
         background: var(--switches-bg-color);
-        line-height: 3.5vw;
+        line-height: 6vw;
       }
 
       /* input (radio) for toggling. hidden - use labels for clicking on */
@@ -471,6 +485,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        font-size: 4.3vw;
       }
 
       /* slide the switch box from right to left */
@@ -500,6 +515,9 @@
         div:nth-of-type(2) {
         opacity: 1;
       }
+      .label_diva_hunk{
+        font-size: 4.3vw;
+      }
 
       /* ################################################################# */
       .content-container {
@@ -516,9 +534,9 @@
       }
 
       .card {
-        width: 9vw;
-        margin: 1vw 0;
-        height: 16vw;
+        width: 25vw;
+        margin: 7vw 0;
+        height: 30vw;
       }
 
       .card-all {
@@ -537,7 +555,7 @@
 
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-        font-size: 1vw;
+        font-size: 4vw;
       }
 
       .img-container-all {
@@ -574,13 +592,13 @@
       }
 
       .name-all {
-        font-size: 1.6vw;
+        font-size:2vw;
         font-weight: bold;
-        margin: 0.5rem 0;
+        margin: 0.8vw 0;
       }
 
       .college-name-all {
-        font-size: 1.4vw;
+        font-size: 1.7vw;
         font-weight: bold;
       }
 
@@ -598,7 +616,7 @@
 
       .like-styling-all {
         font-family: "Aileron", sans-serif;
-        margin-left: 0.5vw;
+        margin-left: vw;
       }
     }
 </style>
@@ -614,7 +632,7 @@
             <img
               src="
             {%static '/images/back-arrows.svg'%}"
-              style="height: 1.5rem"
+              style="height: 1.5vw"
               alt=""
             />
           </span>
@@ -646,19 +664,17 @@
               value="Hunk"
             />
             <label
-              for="switchMonthly"
+              for="switchMonthly" class="label_diva_hunk"
               style="
                 font-family: 'Berkshire Swash', cursive;
                 color: #aaaaaa;
-                font-size: 1.3vw;
               "
               >Diva</label
             >
             <label
-              for="switchYearly"
+              for="switchYearly" class="label_diva_hunk"
               style="
                 font-family: 'TEXAT-BOLD-PERSONAL-USE';
-                font-size: 1.3vw;
                 color: #aaaaaa;
               "
               >Hunk</label
@@ -668,7 +684,7 @@
                 <div
                   style="
                     font-family: 'Berkshire Swash', cursive;
-                    font-size: 1.3vw;
+                    
                   "
                 >
                   Diva
@@ -676,7 +692,6 @@
                 <div
                   style="
                     font-family: 'TEXAT-BOLD-PERSONAL-USE';
-                    font-size: 1.3vw;
                   "
                 >
                   Hunk
@@ -688,6 +703,126 @@
       </div>
       <div class="card-container">
         {%for item in diva%}
+        <div class="card">
+          <div class="card-all">
+            <div
+              class="img-container-all"
+              style="background-image: url({{item.image.url}})"
+            >
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' item.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling-all"> Vote</span>
+              </div>
+            </div>
+            <div class="card-text-all">
+              <div class="name-all">
+                <p>{{item.name}}</p>
+              </div>
+              <div class="college-name-all">
+                <p>IIT Guwahati</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-all">
+            <div
+              class="img-container-all"
+              style="background-image: url({{item.image.url}})"
+            >
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' item.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling-all"> Vote</span>
+              </div>
+            </div>
+            <div class="card-text-all">
+              <div class="name-all">
+                <p>{{item.name}}</p>
+              </div>
+              <div class="college-name-all">
+                <p>IIT Guwahati</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-all">
+            <div
+              class="img-container-all"
+              style="background-image: url({{item.image.url}})"
+            >
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' item.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling-all"> Vote</span>
+              </div>
+            </div>
+            <div class="card-text-all">
+              <div class="name-all">
+                <p>{{item.name}}</p>
+              </div>
+              <div class="college-name-all">
+                <p>IIT Guwahati</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-all">
+            <div
+              class="img-container-all"
+              style="background-image: url({{item.image.url}})"
+            >
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' item.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling-all"> Vote</span>
+              </div>
+            </div>
+            <div class="card-text-all">
+              <div class="name-all">
+                <p>{{item.name}}</p>
+              </div>
+              <div class="college-name-all">
+                <p>IIT Guwahati</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-all">
+            <div
+              class="img-container-all"
+              style="background-image: url({{item.image.url}})"
+            >
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' item.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling-all"> Vote</span>
+              </div>
+            </div>
+            <div class="card-text-all">
+              <div class="name-all">
+                <p>{{item.name}}</p>
+              </div>
+              <div class="college-name-all">
+                <p>IIT Guwahati</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="card">
           <div class="card-all">
             <div
