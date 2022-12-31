@@ -1,26 +1,26 @@
 .navbar-body {
-    position: fixed;
-    width: 100vw;
-    z-index: 1;
-    top: 0;
-    background: #212121;
-    padding: 0.8vw 0.7vw 0.7vw 0.7vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  top: 0;
+  background: #212121;
+  padding: 0.8vw 0.7vw 0.7vw 0.7vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .diva-logo-img {
-    width: 3.6vw;
+  width: 3.6vw;
 }
 
 .alcher-logo-img {
-    width: 2vw;
+  width: 2vw;
 }
 
 .alcher-heading {
-    color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2vw;
-    letter-spacing: 1.4px;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2vw;
+  letter-spacing: 1.4px;
 }

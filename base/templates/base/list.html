@@ -55,7 +55,7 @@
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
       }
-      .card-container::-webkit-scrollbar { 
+      .card-container::-webkit-scrollbar {
         display: none; /* Safari and Chrome */
       }
 
@@ -614,7 +614,7 @@
             <img
               src="
             {%static '/images/back-arrows.svg'%}"
-              style="height: 1.5vw"
+              style="height: 1.5rem"
               alt=""
             />
           </span>
@@ -626,13 +626,19 @@
             type="text"
             name="search"
             placeholder="Search for the participant by name"
-            class="searchbox_input"/>
+            class="searchbox_input"
+          />
           {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
         </form>
         <div class="container">
           <div class="switches-container">
-            <input type="radio" id="switchMonthly" name="switchDiva"
-            value="Diva" checked="checked" onclick= />
+            <input
+              type="radio"
+              id="switchMonthly"
+              name="switchDiva"
+              value="Diva"
+              checked="checked"
+            />
             <input
               type="radio"
               id="switchYearly"
@@ -641,18 +647,40 @@
             />
             <label
               for="switchMonthly"
-              style="font-family: 'Berkshire Swash', cursive; color: #aaaaaa;font-size: 1.3vw;"
+              style="
+                font-family: 'Berkshire Swash', cursive;
+                color: #aaaaaa;
+                font-size: 1.3vw;
+              "
               >Diva</label
             >
             <label
               for="switchYearly"
-              style="font-family: 'TEXAT-BOLD-PERSONAL-USE';font-size: 1.3vw; color: #aaaaaa"
+              style="
+                font-family: 'TEXAT-BOLD-PERSONAL-USE';
+                font-size: 1.3vw;
+                color: #aaaaaa;
+              "
               >Hunk</label
             >
             <div class="switch-wrapper">
               <div class="switch">
-                <div style="font-family: 'Berkshire Swash', cursive;font-size: 1.3vw;">Diva</div>
-                <div style="font-family: 'TEXAT-BOLD-PERSONAL-USE';font-size: 1.3vw;">Hunk</div>
+                <div
+                  style="
+                    font-family: 'Berkshire Swash', cursive;
+                    font-size: 1.3vw;
+                  "
+                >
+                  Diva
+                </div>
+                <div
+                  style="
+                    font-family: 'TEXAT-BOLD-PERSONAL-USE';
+                    font-size: 1.3vw;
+                  "
+                >
+                  Hunk
+                </div>
               </div>
             </div>
           </div>
@@ -684,9 +712,7 @@
             </div>
           </div>
         </div>
-        {%endfor%} 
-        
-        {%for item in hunk%}
+        {%endfor%} {%for item in hunk%}
         <div class="card">
           <div class="card-all">
             <div
@@ -740,6 +766,6 @@
     </li>
     {%endfor%}
   </ul>
-  {% endcomment %} 
+  {% endcomment %}
 </div>
 {% endblock %}
