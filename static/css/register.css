@@ -5,10 +5,22 @@
 * {
   margin: 0%;
 }
+@media (orientation: landscape){
+  .form{
+    height: 100vh;
+    position: sticky;
+    top:0;
+  }
+}
 
 .form-wide {
+
+  box-sizing: border-box;
   display: flex;
-  margin: 5%;
+  padding: 5%;
+}
+.registerForm{
+  margin-left: 10px;
 }
 
 .form-mob {
@@ -17,8 +29,9 @@
 
 .diva-img {
   width: 40vw;
-  height: 52vw;
+  height: 40vw;
   margin-top: -1%;
+  margin-right: 3vw;
 }
 
 .candidate-detail {
@@ -27,6 +40,7 @@
 
 .heading {
   font-family: "Berkshire Swash";
+  font-size: 1.5vw;
 }
 
 .diva-name {
@@ -172,7 +186,6 @@
   }
   .candidate-detail {
     text-align: center;
-    position: absolute;
     bottom: -28%;
   }
   .heading {

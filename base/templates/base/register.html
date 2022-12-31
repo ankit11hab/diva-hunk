@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="{% static '/css/register.css' %}" />
 <div style="color: red; font-size: 30px">{{message}}</div>
-<form method="POST" style="font-size: 30px">
+<form method="POST" class="form" style="font-size: 30px">
   {% csrf_token %}
   <div
     style="
@@ -27,7 +27,7 @@
     <div class="registerForm">
       <div class="candidate-detail">
         <div class="heading">
-          <h4>{{type}}’s Name</h4>
+          <p>{{type}}’s Name</p>
         </div>
         <div class="diva-name">
           <h2>{{candidate.name}}</h2>
@@ -120,7 +120,7 @@
   </div>
   <div class="candidate-detail">
     <div class="heading">
-      <h4>Diva’s Name</h4>
+      <h4>{{type}}’s Name</h4>
     </div>
     <div class="diva-name">
       <h1>{{candidate.name}}</h1>

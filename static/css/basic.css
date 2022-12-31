@@ -9,7 +9,8 @@ body {
 .intro {
     position: -webkit-sticky;
     position: sticky;
-    top:4.1vw;
+    top:4.1vh;
+    height: 95.9vh;
     z-index: -1;
     overflow-y: hidden;
 }

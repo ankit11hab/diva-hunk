@@ -25,6 +25,8 @@
       }
 
       .largest-box {
+        position: sticky;
+        top:0;
         overflow: hidden;
         background-color: #333333;
         width: 100vw;
@@ -34,8 +36,8 @@
       .content-container {
         width: 90%;
         height: 90%;
-        border-radius: 3rem;
-        margin: auto;
+        border-radius: 3vw;
+        margin:2vw auto;
         background-color: white;
         position: relative;
       }
@@ -50,17 +52,22 @@
         justify-content: space-between;
         flex-flow: row wrap;
         overflow: scroll;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+      }
+      .card-container::-webkit-scrollbar { 
+        display: none; /* Safari and Chrome */
       }
 
       .card {
-        width: 14rem;
-        margin: 1rem 0;
+        width: 14vw;
+        margin: 1vw 0;
         height: 60%;
       }
 
       .top-alldiva {
         position: relative;
-        top: 1rem;
+        top: 1vw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -69,20 +76,34 @@
 
       .Back-button {
         cursor: pointer;
-        font-size: 2rem;
+        font-size: 2vw;
         font-family: "Circular Std", sans-serif;
         text-align: center;
       }
 
       #searchbox {
-        width: 50%;
+        width: 40vw;
         text-align: center;
         font-size: large;
-        border-radius: 0.5rem;
+        border-radius: 0.5vw;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        {% comment %} opacity: 0.4; {% endcomment %}
+        /* opacity: 0.4; */
       }
+
+      .searchbox_input{
+      top: 2vw;
+      width: 40vw;
+      /* height: auto; */
+      font-size: 1vw;
+
+      padding: 0.5vw 0;
+
+      border-radius: 0.2vw;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      opacity: 0.4;
+    }
 
       /* ##########################################################
 
@@ -101,8 +122,8 @@
       .container {
         border: 1px solid #aaaaaa60;
         width: fit-content;
-        padding: 0.125rem;
-        border-radius: 0.7rem;
+        padding: 0.125vw;
+        border-radius: 0.7vw;
         font-size: x-large;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -112,14 +133,14 @@
       - adjust "width" to fit the content accordingly
   */
       .switches-container {
-        width: 14rem;
-        border-radius: 0.7rem;
+        width: 12vw;
+        border-radius: 0.7vw;
         position: relative;
         display: flex;
         padding: 0;
         position: relative;
         background: var(--switches-bg-color);
-        line-height: 2.5rem;
+        line-height: 2.5vw;
       }
 
       /* input (radio) for toggling. hidden - use labels for clicking on */
@@ -154,7 +175,7 @@
 
       /* switch box highlighter */
       .switch {
-        border-radius: 0.7rem;
+        border-radius: 0.7vw;
         background: var(--switch-bg-color);
         height: 100%;
       }
@@ -239,16 +260,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
+        padding: 1vw;
         border: 1px solid rgb(219, 219, 219);
-        border-radius: 0.5rem;
+        border-radius: 0.5vw;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
 
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-        font-size: 18px;
+        font-size: 1vw;
       }
 
       .img-container-all {
@@ -273,10 +294,10 @@
         width: fit-content;
         background-color: white;
         box-shadow: 0px 0px 3px 2px;
-        padding: 2px 20px;
+        padding: 0.2vw 2vw;
         border: 0px;
-        border-radius: 7px;
-        margin: 1rem;
+        border-radius: 0.7vw;
+        margin: 1vw;
         cursor: pointer;
         position: absolute;
         bottom: 0px;
@@ -285,11 +306,12 @@
 
       .name-all {
         font-weight: bold;
-        margin: 0.5rem 0;
+        margin: 0.5vw 0;
+        font-size: 1vw;
       }
 
       .college-name-all {
-        font-size: 14px;
+        font-size: 0.8vw;
         font-weight: bold;
       }
 
@@ -307,7 +329,8 @@
 
       .like-styling-all {
         font-family: "Aileron", sans-serif;
-        margin-left: 0.5rem;
+        margin-left: 0.5vw;
+        font-size: 0.9vw;
       }
     }
 
@@ -341,14 +364,21 @@
       }
 
       #searchbox {
-        width: 85%;
+        margin-top: 2vw;
+      }
+      .searchbox_input {
+        width: 85vw;
+        top: 2vw;
         text-align: center;
-        padding: 0;
-        border-radius: 0.8rem;
+        /* padding: 0.8vw 0;  */
+        border-radius: 0.8vw;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        {% comment %} opacity: 0.4; {% endcomment %}
-      }
+        opacity: 0.4;
+    }
+    .searchbox_input::placeholder{
+        font-size: 5vw;
+    }
 
       /* ##########################################################
 
@@ -380,13 +410,13 @@
   */
       .switches-container {
         width: 100%;
-        border-radius: 0.7rem;
+        border-radius: 0.7vw;
         position: relative;
         display: flex;
         padding: 0;
         position: relative;
         background: var(--switches-bg-color);
-        line-height: 3.5rem;
+        line-height: 3.5vw;
       }
 
       /* input (radio) for toggling. hidden - use labels for clicking on */
@@ -421,7 +451,7 @@
 
       /* switch box highlighter */
       .switch {
-        border-radius: 0.7rem;
+        border-radius: 0.7vw;
         background: var(--switch-bg-color);
         height: 100%;
       }
@@ -482,13 +512,13 @@
         flex-direction: row;
         justify-content: space-evenly;
         flex-flow: row wrap;
-        margin-top: 2rem;
+        margin-top: 2vw;
       }
 
       .card {
-        width: 9rem;
-        margin: 1rem 0;
-        height: 16rem;
+        width: 9vw;
+        margin: 1vw 0;
+        height: 16vw;
       }
 
       .card-all {
@@ -507,7 +537,7 @@
 
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-        font-size: 18px;
+        font-size: 1vw;
       }
 
       .img-container-all {
@@ -532,25 +562,25 @@
         width: fit-content;
         background-color: white;
         box-shadow: 0px 0px 3px 2px;
-        padding: 2px 16px;
+        padding: 0.2vw 1.6vw;
         border: 0px;
-        border-radius: 7px;
-        margin: 0.2rem;
+        border-radius: 0.7vw;
+        margin: 0.2vw;
         cursor: pointer;
         position: absolute;
         bottom: 0px;
-        right: -0.9rem;
+        right: -0.9vw;
         transform: scale(0.6);
       }
 
       .name-all {
-        font-size: 16px;
+        font-size: 1.6vw;
         font-weight: bold;
         margin: 0.5rem 0;
       }
 
       .college-name-all {
-        font-size: 14px;
+        font-size: 1.4vw;
         font-weight: bold;
       }
 
@@ -568,13 +598,12 @@
 
       .like-styling-all {
         font-family: "Aileron", sans-serif;
-        margin-left: 0.5rem;
+        margin-left: 0.5vw;
       }
     }
 </style>
 
 <div class="largest-box">
-  <br /><br />
   <div class="content-container">
     <div class="padded-container">
       <div class="top-alldiva">
@@ -585,7 +614,7 @@
             <img
               src="
             {%static '/images/back-arrows.svg'%}"
-              style="height: 1.5rem"
+              style="height: 1.5vw"
               alt=""
             />
           </span>
@@ -597,17 +626,7 @@
             type="text"
             name="search"
             placeholder="Search for the participant by name"
-            style="
-              width: 100%;
-              text-align: center;
-              font-size: large;
-              padding: 0.5rem 0;
-              border-radius: 0.5rem;
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
-              opacity: 0.4;
-            "
-          />
+            class="searchbox_input"/>
           {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
         </form>
         <div class="container">
@@ -622,18 +641,18 @@
             />
             <label
               for="switchMonthly"
-              style="font-family: 'Berkshire Swash', cursive; color: #aaaaaa"
+              style="font-family: 'Berkshire Swash', cursive; color: #aaaaaa;font-size: 1.3vw;"
               >Diva</label
             >
             <label
               for="switchYearly"
-              style="font-family: 'TEXAT-BOLD-PERSONAL-USE'; color: #aaaaaa"
+              style="font-family: 'TEXAT-BOLD-PERSONAL-USE';font-size: 1.3vw; color: #aaaaaa"
               >Hunk</label
             >
             <div class="switch-wrapper">
               <div class="switch">
-                <div style="font-family: 'Berkshire Swash', cursive">Diva</div>
-                <div style="font-family: 'TEXAT-BOLD-PERSONAL-USE'">Hunk</div>
+                <div style="font-family: 'Berkshire Swash', cursive;font-size: 1.3vw;">Diva</div>
+                <div style="font-family: 'TEXAT-BOLD-PERSONAL-USE';font-size: 1.3vw;">Hunk</div>
               </div>
             </div>
           </div>
@@ -665,7 +684,9 @@
             </div>
           </div>
         </div>
-        {%endfor%} {%for item in hunk%}
+        {%endfor%} 
+        
+        {%for item in hunk%}
         <div class="card">
           <div class="card-all">
             <div
@@ -719,5 +740,6 @@
     </li>
     {%endfor%}
   </ul>
-  {% endcomment %} {% endblock %}
+  {% endcomment %} 
 </div>
+{% endblock %}
