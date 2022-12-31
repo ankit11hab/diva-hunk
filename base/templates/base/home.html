@@ -3,9 +3,14 @@
 <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet" />
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
 <style>
   @font-face {
     font-family: TEXAT-BOLD-PERSONAL-USE;
@@ -28,7 +33,7 @@
 
     .largest-box {
       position: sticky;
-      top:0;
+      top: 0;
       background-color: #333333;
       width: 99vw;
       height: 100vh;
@@ -55,14 +60,14 @@
       /* scroll-snap-type: y mandatory; */
       scrollbar-width: none;
       box-sizing: content-box;
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+      scrollbar-width: none; /* Firefox */
     }
-    .diva-scroller::-webkit-scrollbar { 
-     display: none; /* Safari and Chrome */
+    .diva-scroller::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
     }
-    .hunk-scroller::-webkit-scrollbar { 
-     display: none;   /* Safari and Chrome */
+    .hunk-scroller::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
     }
 
     .hunk-scroller {
@@ -71,8 +76,8 @@
       height: 100%;
       width: 21%;
       scroll-snap-type: y mandatory;
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+      scrollbar-width: none; /* Firefox */
     }
 
     .card-place {
@@ -125,14 +130,14 @@
       /* padding: 0.5vw 0; */
       border-radius: 0.5vw;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
     }
-    #searchbox input::placeholder{
-        font-size: 1vw;
-        padding: auto;
+    #searchbox input::placeholder {
+      font-size: 1vw;
+      padding: auto;
     }
-    .searchbox_input{
+    .searchbox_input {
       top: 2vw;
       width: 40vw;
       /* height: auto; */
@@ -142,7 +147,7 @@
 
       border-radius: 0.2vw;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
     }
 
@@ -371,7 +376,7 @@
       font-size: 36px;
       margin: 2rem 0;
     }
-    #searchbox{
+    #searchbox {
       margin-top: 2vw;
     }
 
@@ -385,8 +390,8 @@
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
     }
-    .searchbox_input::placeholder{
-        font-size: 5vw;
+    .searchbox_input::placeholder {
+      font-size: 5vw;
     }
 
     .after-container {
@@ -534,7 +539,7 @@
     }
   }
 </style>
-<div class="intro">
+<div class="intro" id="intro">
   <div class="hero-section">
     <img src="{% static '/images/hero.svg' %}" class="hero-img" />
   </div>
@@ -545,13 +550,17 @@
     <img src="{% static '/images/scroll_down.svg' %}" class="scroll-down-img" />
   </div>
 </div>
-<div class="largest-box">
+<div class="largest-box" id="largest-box">
   <br /><br />
 
   <div class="content-container">
     <form method="GET" action="{% url 'list' %}" id="searchbox">
       {% csrf_token %}
-      <input type="text" name="search" placeholder="Search for the participant by name" class="searchbox_input"
+      <input
+        type="text"
+        name="search"
+        placeholder="Search for the participant by name"
+        class="searchbox_input"
       />
       {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
     </form>
@@ -564,9 +573,7 @@
     <div class="diva-scroller">
       {% comment %}
       <div class="card-place"></div>
-      {% endcomment %} 
-      
-      {% for diva in divas %}
+      {% endcomment %} {% for diva in divas %}
       <div class="card-place">
         <div class="temp">
           <div class="card">
@@ -578,8 +585,12 @@
               </div>
             </div>
             <div class="card-text">
-              <div class="like-button" onclick="window.location.href=`{% url 'diva register' diva.id %}`">
-                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
@@ -628,8 +639,12 @@
               </div>
             </div>
             <div class="card-text">
-              <div class="like-button" onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
-                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
@@ -675,6 +690,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script>
+  var intro = document.getElementById("intro");
+  window.onscroll = function () {
+    myFunction();
+  };
+
+  function myFunction() {
+    console.log("scrolling");
+    var element = document.getElementById("largest-box");
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset;
+    if (
+      document.documentElement.scrollTop > 300 &&
+      document.documentElement.scrollTop < elementPosition
+    ) {
+      window.scrollTo({
+        top: offsetPosition,
+      });
+    }
+  }
+
   function testInView($el) {
     var wTop = $(window).scrollTop();
     var wBot = wTop + $(window).height();
