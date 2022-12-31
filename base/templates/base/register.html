@@ -42,7 +42,7 @@
           </div>
           <div class="diva-name">
             <h2>{{candidate.name}}</h2>
-            <button type="button" class="sharebtn">
+            <button type="button" class="sharebtn" onclick="cpytxt()">
               Share Link
               <img
                 src="{% static '/images/ShareLink.png' %}"
@@ -128,7 +128,7 @@
   </div> -->
   <div style="position: relative">
     <img src="{% static '/images/diva-img.png' %}" class="diva-img" />
-    <button type="button" class="sharelinkbtn-mob">Share Link</button>
+    <button type="button" class="sharelinkbtn-mob" onclick="cpytxt()">Share Link</button>
   </div>
   <div class="candidate-detail">
     <div class="heading">
@@ -203,5 +203,10 @@
     </button>
   </div>
 </div>
+<script type="text/javascript">
+  function cpytxt(){
+      navigator.clipboard.writeText(window.location.href);
+  }
+</script>
 
 {% endblock %}
