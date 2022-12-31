@@ -6,10 +6,13 @@
   margin: 0%;
 }
 @media (orientation: landscape) {
-  .form {
-    height: 150vh;
-    /* position: sticky;
-    top: 0; */
+  .largest-box{
+    position: sticky;
+    top:3rem;
+    overflow: hidden;
+    background-color: #333333;
+    /* width: 100vw; */
+    height: 100vh;  
   }
 }
 
