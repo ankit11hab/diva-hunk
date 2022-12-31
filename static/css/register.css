@@ -8,7 +8,7 @@
 
 .form-wide {
   display: flex;
-  margin: 5%;
+  margin: 2% 5%;
 }
 
 .form-mob {
@@ -16,9 +16,11 @@
 }
 
 .diva-img {
-  width: 40vw;
-  height: 52vw;
-  margin-top: -1%;
+  width: 30vw;
+  height: 70vh;
+  margin-top: 2%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .candidate-detail {
@@ -141,6 +143,9 @@
 }
 
 @media (max-width: 540px) {
+  .largest-box {
+    background-color: #000000;
+  }
   .form-wide {
     display: none;
   }

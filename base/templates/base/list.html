@@ -69,7 +69,7 @@
 
       .Back-button {
         cursor: pointer;
-        font-size: 2rem;
+        font-size: 2vw;
         font-family: "Circular Std", sans-serif;
         text-align: center;
       }
@@ -584,8 +584,8 @@
           ><span>
             <img
               src="
-            {%static '/images/back-arrows.svg'%}"
-              style="height: 1.5rem"
+            {%static '/images/Chevron-left.svg'%}"
+              style="width: 2vw"
               alt=""
             />
           </span>
@@ -612,8 +612,13 @@
         </form>
         <div class="container">
           <div class="switches-container">
-            <input type="radio" id="switchMonthly" name="switchDiva"
-            value="Diva" checked="checked" onclick= />
+            <input
+              type="radio"
+              id="switchMonthly"
+              name="switchDiva"
+              value="Diva"
+              checked="checked"
+            />
             <input
               type="radio"
               id="switchYearly"
