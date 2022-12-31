@@ -50,6 +50,11 @@
         justify-content: space-between;
         flex-flow: row wrap;
         overflow: scroll;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+      }
+      .card-container::-webkit-scrollbar { 
+        display: none; /* Safari and Chrome */
       }
 
       .card {
@@ -665,7 +670,9 @@
             </div>
           </div>
         </div>
-        {%endfor%} {%for item in hunk%}
+        {%endfor%} 
+        
+        {%for item in hunk%}
         <div class="card">
           <div class="card-all">
             <div

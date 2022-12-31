@@ -3,14 +3,9 @@
 <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
-  rel="stylesheet"
-/>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
   @font-face {
     font-family: TEXAT-BOLD-PERSONAL-USE;
@@ -33,7 +28,7 @@
 
     .largest-box {
       background-color: #333333;
-      width: 100vw;
+      width: 99vw;
       height: 100vh;
     }
 
@@ -55,14 +50,27 @@
       overflow-y: scroll;
       height: 100%;
       width: 21%;
-      scroll-snap-type: y mandatory;
+      /* scroll-snap-type: y mandatory; */
+      scrollbar-width: none;
+      box-sizing: content-box;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .diva-scroller::-webkit-scrollbar { 
+     display: none; /* Safari and Chrome */
+    }
+    .hunk-scroller::-webkit-scrollbar { 
+     display: none;   /* Safari and Chrome */
     }
 
     .hunk-scroller {
-      overflow: scroll;
+      overflow: visible;
+      overflow-y: scroll;
       height: 100%;
       width: 21%;
       scroll-snap-type: y mandatory;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
     }
 
     .card-place {
@@ -112,10 +120,12 @@
       width: 40%;
       text-align: center;
       font-size: large;
-      {% comment %} padding: 0.5rem 0; {% endcomment %}
+
+      /* padding: 0.5rem 0; */
+
       border-radius: 0.5rem;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
     }
 
@@ -313,6 +323,7 @@
       flex-direction: row;
       align-items: center;
       overflow: visible;
+      scrollbar-width: none;
       overflow-y: scroll;
       width: 100%;
       height: 50vh;
@@ -499,16 +510,24 @@
     }
   }
 </style>
+<div class="intro">
+  <div class="hero-section">
+    <img src="{% static '/images/hero.svg' %}" class="hero-img" />
+  </div>
+  <div class="hero-section-mob">
+    <img src="{% static '/images/hero-mob.svg' %}" class="hero-img" />
+  </div>
+  <div class="scroll-down">
+    <img src="{% static '/images/scroll_down.svg' %}" class="scroll-down-img" />
+  </div>
+</div>
 <div class="largest-box">
   <br /><br />
+
   <div class="content-container">
     <form method="GET" action="{% url 'list' %}" id="searchbox">
       {% csrf_token %}
-      <input
-        type="text"
-        name="search"
-        placeholder="Search for the participant by name"
-        style="
+      <input type="text" name="search" placeholder="Search for the participant by name" style="
           width: 100%;
           text-align: center;
           font-size: large;
@@ -530,8 +549,9 @@
     <div class="diva-scroller">
       {% comment %}
       <div class="card-place"></div>
-      {% endcomment %} {% for diva in divas %}
-
+      {% endcomment %} 
+      
+      {% for diva in divas %}
       <div class="card-place">
         <div class="temp">
           <div class="card">
@@ -543,12 +563,8 @@
               </div>
             </div>
             <div class="card-text">
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+              <div class="like-button" onclick="window.location.href=`{% url 'diva register' diva.id %}`">
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
@@ -597,12 +613,8 @@
               </div>
             </div>
             <div class="card-text">
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+              <div class="like-button" onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
