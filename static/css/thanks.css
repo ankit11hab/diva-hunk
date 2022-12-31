@@ -104,10 +104,11 @@
   }
   .alcherlogo {
     width: 80vw;
+    /* transform: scale(1.15, 1.1); */
   }
   .left_mob {
     font-family: "Star Guard";
-
+    /* width: 100vw; */
     font-weight: bold;
     color: #ffffff;
     -webkit-text-stroke: 1px #000000;
@@ -158,7 +159,7 @@
   .btn {
     position: relative;
     left: 8%;
-    margin-top: 40%;
+    /* margin-top: 40%; */
     width: 50%;
     height: 11vw;
     font-size: 4vw;

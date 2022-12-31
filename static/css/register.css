@@ -27,11 +27,9 @@
 }
 
 .diva-img {
- position: relative;
-    width: 70vw;
-    height: 75vh;
-
-    margin: 5% auto;
+  width: 36vw;
+  height: 44vw;
+  margin-top: -1%;
 }
 
 .candidate-detail {
