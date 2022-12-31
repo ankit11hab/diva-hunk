@@ -29,7 +29,7 @@
         top:0;
         overflow: hidden;
         background-color: #333333;
-        width: 100vw;
+        /* width: 100vw; */
         height: 100vh;
         padding-top: 3vw;
       }
@@ -392,6 +392,7 @@
     }
     .searchbox_input::placeholder{
         font-size: 3vw;
+        font-weight: bold;
     }
 
       /* ##########################################################
@@ -526,17 +527,17 @@
 
       .card-container {
         width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
         margin-top: 2vw;
       }
 
       .card {
-        width: 25vw;
+        width: 41vw;
         margin: 7vw 0;
-        height: 30vw;
+        height: 50vw;
       }
 
       .card-all {
@@ -703,126 +704,6 @@
       </div>
       <div class="card-container">
         {%for item in diva%}
-        <div class="card">
-          <div class="card-all">
-            <div
-              class="img-container-all"
-              style="background-image: url({{item.image.url}})"
-            >
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' item.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling-all"> Vote</span>
-              </div>
-            </div>
-            <div class="card-text-all">
-              <div class="name-all">
-                <p>{{item.name}}</p>
-              </div>
-              <div class="college-name-all">
-                <p>IIT Guwahati</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-all">
-            <div
-              class="img-container-all"
-              style="background-image: url({{item.image.url}})"
-            >
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' item.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling-all"> Vote</span>
-              </div>
-            </div>
-            <div class="card-text-all">
-              <div class="name-all">
-                <p>{{item.name}}</p>
-              </div>
-              <div class="college-name-all">
-                <p>IIT Guwahati</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-all">
-            <div
-              class="img-container-all"
-              style="background-image: url({{item.image.url}})"
-            >
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' item.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling-all"> Vote</span>
-              </div>
-            </div>
-            <div class="card-text-all">
-              <div class="name-all">
-                <p>{{item.name}}</p>
-              </div>
-              <div class="college-name-all">
-                <p>IIT Guwahati</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-all">
-            <div
-              class="img-container-all"
-              style="background-image: url({{item.image.url}})"
-            >
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' item.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling-all"> Vote</span>
-              </div>
-            </div>
-            <div class="card-text-all">
-              <div class="name-all">
-                <p>{{item.name}}</p>
-              </div>
-              <div class="college-name-all">
-                <p>IIT Guwahati</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-all">
-            <div
-              class="img-container-all"
-              style="background-image: url({{item.image.url}})"
-            >
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' item.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling-all"> Vote</span>
-              </div>
-            </div>
-            <div class="card-text-all">
-              <div class="name-all">
-                <p>{{item.name}}</p>
-              </div>
-              <div class="college-name-all">
-                <p>IIT Guwahati</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="card">
           <div class="card-all">
             <div
