@@ -65,6 +65,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
       }
 
       .Back-button {
@@ -193,6 +194,7 @@
         .switch
         div:nth-of-type(1) {
         opacity: 1;
+        
       }
 
       /* toggle the switch box labels - second checkbox:checked - show second switch div */
@@ -326,6 +328,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom:5%;
       }
 
       .padded-container {
@@ -611,32 +614,60 @@
           {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
         </form>
         <div class="container">
-          <div class="switches-container">
-            <input type="radio" id="switchMonthly" name="switchDiva"
-            value="Diva" checked="checked" onclick= />
-            <input
-              type="radio"
-              id="switchYearly"
-              name="switchDiva"
-              value="Hunk"
-            />
-            <label
-              for="switchMonthly"
-              style="font-family: 'Berkshire Swash', cursive; color: #aaaaaa"
-              >Diva</label
-            >
-            <label
-              for="switchYearly"
-              style="font-family: 'TEXAT-BOLD-PERSONAL-USE'; color: #aaaaaa"
-              >Hunk</label
-            >
-            <div class="switch-wrapper">
-              <div class="switch">
-                <div style="font-family: 'Berkshire Swash', cursive">Diva</div>
-                <div style="font-family: 'TEXAT-BOLD-PERSONAL-USE'">Hunk</div>
+          {% if isdiva %}
+          <a href="{% url 'list' %}?Hunk=" style="text-decoration: none;">
+            <div class="switches-container">
+              <input type="radio" name="Diva" value="" checked="checked" />
+              <input type="radio" name="Hunk" value="" />
+              <label for="switchMonthly" style="font-family: 'Berkshire Swash', cursive; color: #aaaaaa">Diva</label>
+              <label for="switchYearly" style="font-family: 'TEXAT-BOLD-PERSONAL-USE'; color: #aaaaaa">Hunk</label>
+              <div class="switch-wrapper">
+                <div class="switch">
+                  <div style="
+                    font-family: 'Berkshire Swash', cursive;
+                    font-size: 1.3vw;
+                  ">
+                    Diva
+                  </div>
+                  <div style="
+                    font-family: 'TEXAT-BOLD-PERSONAL-USE';
+                    font-size: 1.3vw;
+                  ">
+                    Hunk
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
+          {% else %}
+          <a href="{% url 'list' %}?Diva=" style="text-decoration: none;">
+            <div class="switches-container">
+              <input type="radio" name="Diva" value=""  />
+              <input type="radio" name="Hunk" value="" checked="checked" />
+              <label for="switchMonthly" style="font-family: 'Berkshire Swash', cursive; color: #aaaaaa">Diva</label>
+              <label for="switchYearly" style="font-family: 'TEXAT-BOLD-PERSONAL-USE'; color: #aaaaaa">Hunk</label>
+              <div class="switch-wrapper">
+                <div class="switch">
+                  <div style="
+                    font-family: 'Berkshire Swash', cursive;
+                    font-size: 1.3vw;
+                  ">
+                    Diva
+                  </div>
+                  <div style="
+                    font-family: 'TEXAT-BOLD-PERSONAL-USE';
+                    font-size: 1.3vw;
+                  ">
+                    Hunk
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          {% endif %}
+
+
+
         </div>
       </div>
       <div class="card-container">
@@ -695,9 +726,7 @@
     </div>
   </div>
   <div class="after-container">
-    <div class="contact-us">
-      <img src="{%static '/images/contact-us.png'%}" alt="" />
-    </div>
+    
   </div>
   {% comment %}
   <form method="GET" action="">
