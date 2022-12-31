@@ -129,9 +129,11 @@
     <img src="{% static '/images/Chevron-left.svg' %}" style="width: 3vw; margin-right: 1%;" />
     <div style="font-weight: 200; font-size: 2.5vw;">Back</div>
   </div> -->
-  <div style="">
-    <img src="{{candidate.image.url}}" class="diva-img" />
-    <button type="button" class="sharelinkbtn-mob">Share Link</button>
+  <div style="position: relative">
+    <img src="{% static '/images/diva-img.png' %}" class="diva-img" />
+    <button type="button" class="sharelinkbtn-mob" onclick="cpytxt()">
+      Share Link
+    </button>
   </div>
   <div class="candidate-detail">
     <div class="heading">
