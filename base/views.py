@@ -22,7 +22,8 @@ def divaHunkList(request):
     context = {
         'diva': [],
         'hunk': [],
-        'message': ""
+        'message': "",
+        'isdiva':False,
     }
     searchquery = request.GET.get('search')
     if searchquery!=None and searchquery!="":
@@ -43,6 +44,7 @@ def divaHunkList(request):
         else :
             results=Diva.objects.all() 
             context.update(diva=results)
+            context.update(isdiva=True)
         
         
     # print(genderquery, searchquery)
