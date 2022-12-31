@@ -37,12 +37,12 @@ def divaHunkList(request):
             return render(request, 'base/list.html',context)
     else:
         
-        if("Diva" in request.GET):
-            results=Diva.objects.all()
-            context.update(diva=results)
-        else :
-            results=Hunk.objects.all() 
+        if("Hunk" in request.GET):
+            results=Hunk.objects.all()
             context.update(hunk=results)
+        else :
+            results=Diva.objects.all() 
+            context.update(diva=results)
         
         
     # print(genderquery, searchquery)
@@ -66,6 +66,7 @@ def divaRegistration(request, pk):
             return render(request, 'base/register.html', context)
         context.update(form=form)
         voter = form.save(commit=False)
+        
         if 'sendOTP' in request.POST:
             find = Voter.objects.filter(email=voter.email)
             if (find.count() >= 1):
@@ -105,7 +106,7 @@ def divaRegistration(request, pk):
 def hunkRegistration(request, pk):
     candidate = Hunk.objects.get(pk=pk)
     context = {
-        'type': "Diva",
+        'type': "Hunk",
         'candidate': candidate,
         'form': {},
         'message': ""
