@@ -1,5 +1,7 @@
 .navbar-body {
-  position: sticky;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
   top: 0;
   background: #212121;
   padding: 0.8vw 0.7vw 0.7vw 0.7vw;

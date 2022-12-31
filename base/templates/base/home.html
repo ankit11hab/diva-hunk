@@ -3,14 +3,9 @@
 <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
-  rel="stylesheet"
-/>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
   @font-face {
     font-family: TEXAT-BOLD-PERSONAL-USE;
@@ -32,8 +27,10 @@
     }
 
     .largest-box {
+      position: sticky;
+      top:0;
       background-color: #333333;
-      width: 100vw;
+      width: 99vw;
       height: 100vh;
     }
 
@@ -55,14 +52,27 @@
       overflow-y: scroll;
       height: 100%;
       width: 21%;
-      scroll-snap-type: y mandatory;
+      /* scroll-snap-type: y mandatory; */
+      scrollbar-width: none;
+      box-sizing: content-box;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .diva-scroller::-webkit-scrollbar { 
+     display: none; /* Safari and Chrome */
+    }
+    .hunk-scroller::-webkit-scrollbar { 
+     display: none;   /* Safari and Chrome */
     }
 
     .hunk-scroller {
-      overflow: scroll;
+      overflow: visible;
+      overflow-y: scroll;
       height: 100%;
       width: 21%;
       scroll-snap-type: y mandatory;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
     }
 
     .card-place {
@@ -85,13 +95,13 @@
       position: relative;
       width: 42%;
       height: 50%;
-      margin: 2rem;
+      margin: 2vw;
     }
 
     .diva-part-title {
       margin: 0px;
       font-weight: bolder;
-      font-size: 3.5rem;
+      font-size: 3.5vw;
       position: absolute;
       top: 0px;
       left: 0px;
@@ -100,7 +110,7 @@
     .hunk-part-title {
       margin: 0px;
       font-weight: bolder;
-      font-size: 3.5rem;
+      font-size: 3.5vw;
       position: absolute;
       bottom: 0px;
       right: 0px;
@@ -108,14 +118,31 @@
 
     #searchbox {
       position: absolute;
-      top: 2rem;
-      width: 40%;
+      top: 2vw;
+      width: 40vw;
+      /* height: auto; */
       text-align: center;
-      font-size: large;
-      {% comment %} padding: 0.5rem 0; {% endcomment %}
-      border-radius: 0.5rem;
+      /* padding: 0.5vw 0; */
+      border-radius: 0.5vw;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      opacity: 0.4;
+    }
+    #searchbox input::placeholder{
+        font-size: 1vw;
+        padding: auto;
+    }
+    .searchbox_input{
+      top: 2vw;
+      width: 40vw;
+      /* height: auto; */
+      font-size: 1vw;
+
+      padding: 0.5vw 0;
+
+      border-radius: 0.2vw;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
     }
 
@@ -154,8 +181,8 @@
 
     .temp {
       transform: scale(0.6);
-      width: 354px;
-      height: 532px;
+      width: 25vw;
+      height: 26vw;
     }
 
     .card span {
@@ -260,7 +287,7 @@
 
     .white-text {
       font-family: "Circular Std", sans-serif;
-      font-size: 4rem;
+      font-size: 4vw;
       font-weight: bolder;
       position: absolute;
       color: white;
@@ -272,7 +299,7 @@
 
     .black-text {
       font-family: "Circular Std", sans-serif;
-      font-size: 4rem;
+      font-size: 4vw;
       font-weight: bolder;
       position: absolute;
       top: 50%;
@@ -313,6 +340,7 @@
       flex-direction: row;
       align-items: center;
       overflow: visible;
+      scrollbar-width: none;
       overflow-y: scroll;
       width: 100%;
       height: 50vh;
@@ -343,15 +371,22 @@
       font-size: 36px;
       margin: 2rem 0;
     }
+    #searchbox{
+      margin-top: 2vw;
+    }
 
-    #searchbox {
-      width: 85%;
+    .searchbox_input {
+      width: 85vw;
+      top: 2vw;
       text-align: center;
-      {% comment %} padding: 0.8rem 0; {% endcomment %}
-      border-radius: 0.8rem;
+      /* padding: 0.8vw 0;  */
+      border-radius: 0.8vw;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
+    }
+    .searchbox_input::placeholder{
+        font-size: 5vw;
     }
 
     .after-container {
@@ -472,7 +507,7 @@
 
     .black-text {
       font-family: "Circular Std", sans-serif;
-      font-size: 4rem;
+      font-size: 4vw;
       font-weight: bolder;
       position: absolute;
       top: 50%;
@@ -499,25 +534,24 @@
     }
   }
 </style>
+<div class="intro">
+  <div class="hero-section">
+    <img src="{% static '/images/hero.svg' %}" class="hero-img" />
+  </div>
+  <div class="hero-section-mob">
+    <img src="{% static '/images/hero-mob.svg' %}" class="hero-img" />
+  </div>
+  <div class="scroll-down">
+    <img src="{% static '/images/scroll_down.svg' %}" class="scroll-down-img" />
+  </div>
+</div>
 <div class="largest-box">
   <br /><br />
+
   <div class="content-container">
     <form method="GET" action="{% url 'list' %}" id="searchbox">
       {% csrf_token %}
-      <input
-        type="text"
-        name="search"
-        placeholder="Search for the participant by name"
-        style="
-          width: 100%;
-          text-align: center;
-          font-size: large;
-          padding: 0.5rem 0;
-          border-radius: 0.5rem;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          {% comment %} opacity: 0.4; {% endcomment %}
-        "
+      <input type="text" name="search" placeholder="Search for the participant by name" class="searchbox_input"
       />
       {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
     </form>
@@ -530,8 +564,9 @@
     <div class="diva-scroller">
       {% comment %}
       <div class="card-place"></div>
-      {% endcomment %} {% for diva in divas %}
-
+      {% endcomment %} 
+      
+      {% for diva in divas %}
       <div class="card-place">
         <div class="temp">
           <div class="card">
@@ -543,12 +578,8 @@
               </div>
             </div>
             <div class="card-text">
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+              <div class="like-button" onclick="window.location.href=`{% url 'diva register' diva.id %}`">
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
@@ -597,12 +628,8 @@
               </div>
             </div>
             <div class="card-text">
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+              <div class="like-button" onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
