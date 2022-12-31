@@ -7,9 +7,9 @@
 }
 @media (orientation: landscape) {
   .form {
-    height: 100vh;
-    position: sticky;
-    top: 0;
+    height: 150vh;
+    /* position: sticky;
+    top: 0; */
   }
 }
 
@@ -27,8 +27,8 @@
 }
 
 .diva-img {
-  width: 40vw;
-  height: 52vw;
+  width: 36vw;
+  height: 44vw;
   margin-top: -1%;
 }
 
@@ -155,6 +155,7 @@
 @media (max-width: 540px) {
   .largest-box {
     background-color: #000000;
+    display: none;
   }
   .form-wide {
     display: none;
