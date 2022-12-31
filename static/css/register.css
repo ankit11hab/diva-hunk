@@ -16,9 +16,10 @@
 }
 
 .diva-img {
-  width: 40vw;
-  height: 52vw;
+  width: 33.8vw;
+  height: 40vw;
   margin-top: -1%;
+  margin-right: 3vw;
 }
 
 .candidate-detail {
@@ -27,6 +28,7 @@
 
 .heading {
   font-family: "Berkshire Swash";
+  font-size: 1.5vw;
 }
 
 .diva-name {
