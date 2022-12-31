@@ -39,9 +39,11 @@
 
 .icons {
   margin-top: 25%;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  margin-left: 40%;
+  margin-left: 40%; */
+  justify-content: space-evenly;
+
 }
 
 .icon-imgs {
@@ -53,6 +55,10 @@
 .mail {
   margin-top: 2vw;
   font-size: 1.3vw;
+}
+.mail a{
+  text-decoration: none;
+  color: white;
 }
 
 @media (max-width: 550px) {
