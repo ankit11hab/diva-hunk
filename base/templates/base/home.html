@@ -137,13 +137,12 @@
       text-align: center;
       font-size: large;
       border-radius: 0.5vw;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.2),
+        0 6px 20px 0 rgba(162, 162, 162, 0.19);
     }
 
     #searchbox input::placeholder {
       font-size: large;
-      font-weight: bold;
       font-size: 1vw;
     }
 
@@ -171,8 +170,8 @@
 
     .view-all-buttons {
       font-family: "Circular Std", sans-serif;
-      width: 12%;
-      font-size: 1.2rem;
+      width: 10%;
+      font-size: 1.05vw;
       color: white;
       padding: 0.3rem;
       background: none;
@@ -180,7 +179,7 @@
       text-align: center;
       border: 1px solid white;
       border-radius: 2rem;
-      margin: 0 9%;
+      margin: 0 11%;
     }
 
     .contact-us {
@@ -264,7 +263,7 @@
       justify-content: center;
       width: fit-content;
       background-color: white;
-      box-shadow: 0px 0px 3px 2px;
+      /* box-shadow: 0px 0px 3px 2px; */
       padding: 2px 20px;
       border: 0px;
       border-radius: 7px;
@@ -402,13 +401,16 @@
       text-align: center;
       /* padding: 0.8vw 0;  */
       border-radius: 0.8vw;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px 0;
+      outline: none;
+      border: 0.5px solid rgb(211, 211, 211);
+      box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.2),
+        0 6px 20px 0 rgba(162, 162, 162, 0.19);
       opacity: 0.4;
     }
 
     .searchbox_input::placeholder {
-      font-size: 5vw;
+      font-size: 3vw;
     }
 
     .after-container {
@@ -478,8 +480,8 @@
       justify-content: center;
       width: fit-content;
       background-color: white;
-      box-shadow: 0px 0px 3px 2px;
-      padding: 2px 20px;
+      /* box-shadow: 0px 0px 3px 2px; */
+      padding: 0.2vw 1.6vw;
       border: 0px;
       border-radius: 7px;
       transform: scale(1.5);
@@ -598,7 +600,7 @@
             </div>
             <div class="card-text">
               <div class="like-button" onclick="window.location.href=`{% url 'diva register' diva.id %}`">
-                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Vote</span>
               </div>
               <br />
               <div class="college-name">
@@ -646,7 +648,7 @@
             </div>
             <div class="card-text">
               <div class="like-button" onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
-                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Vote</span>
               </div>
               <br />
               <div class="college-name">
