@@ -75,7 +75,7 @@
 
     .Back-button {
       cursor: pointer;
-      font-size: 2vw;
+      font-size: 1.5vw;
       font-family: "Circular Std", sans-serif;
       text-align: center;
     }
@@ -280,16 +280,6 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-
-        {
-        % comment %
-      }
-
-      background-image: url("img.jpg");
-
-        {
-        % endcomment %
-      }
 
       background-position: center center;
       background-size: cover;
@@ -566,17 +556,7 @@
       align-items: center;
       overflow: hidden;
 
-        {
-        % comment %
-      }
-
-      background-image: url("img.jpg");
-
-        {
-        % endcomment %
-      }
-
-      background-position: center center;
+      background-position: center;
       background-size: cover;
       position: relative;
     }
@@ -635,7 +615,7 @@
       <div class="top-alldiva">
         <span class="Back-button" onclick="window.location.href=`{% url 'home'  %}`"><span>
             <img src="
-            {%static '/images/back-arrows.svg'%}" style="height: 1.5vw" alt="" />
+            {%static '/images/back-arrows.svg'%}" style="height: 1vw" alt="" />
           </span>
           Back</span>
         <form method="GET" action="" id="searchbox">

@@ -1,7 +1,7 @@
 @media (orientation: landscape){
 .navbar-body {
   position: fixed;
-  width: 100vw;
+  width: 99.3vw;
   height: 3rem;
   box-sizing: border-box;
   z-index: 1;

@@ -31,7 +31,8 @@
 }
 
 .diva-img {
-  width: 36vw;
+  width: 29vw;
+  object-fit: cover;
   /* height: 44vw; */
   margin-top: -1%;
 }
@@ -47,7 +48,8 @@
 
 .diva-name {
   font-family: "Circular Std Book";
-  font-size: 2.5vw;
+  font-size: 1.8vw;
+  font-weight: 900;
 }
 
 .sharebtn {
@@ -60,7 +62,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border: 1.5px solid black;
+  border-radius: 1vw;
   background-color: #ffffff;
 }
 
@@ -70,13 +73,14 @@
 }
 
 .diva-name {
+  margin-top: 1vw;
   display: flex;
   flex-direction: row;
 }
 
 .institute {
   font-family: "Circular Std Book";
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   font-weight: 700;
 }
 
@@ -84,14 +88,14 @@
   color: #5b5858;
   font-family: "Outfit";
   font-weight: 400;
-  font-size: 1.2vw;
+  font-size: 0.9vw;
   margin-bottom: 2vw;
 }
 
 .label {
   font-family: "Circular Std Book";
   font-weight: 700;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 .input-topic {
@@ -101,7 +105,8 @@
 .input {
   background: rgba(250, 250, 250, 0.93);
   box-sizing: border-box;
-  border: 2px solid #e1e1e1;
+  border: 1px solid #e1e1e1;
+  padding: 0 2%;
   border-radius: 0.8vw;
 }
 
@@ -122,8 +127,8 @@
   background-color: #ffffff;
   width: 8vw;
   height: 2.8vw;
+  border: 1.5px solid black;
   border-radius: 0.8vw;
-  border: 2px solid #000000;
 }
 
 .otp-input {
