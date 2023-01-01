@@ -1,7 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/deb32b91d90407c8527dfeaac14994d6?family=Aileron);
 
 .footer-body-wide {
-  height: calc(100vh - 3rem);
+  height: 66vh;
   position: sticky;
   top:3rem;
   box-sizing: border-box;
