@@ -14,7 +14,7 @@ def home(request):
         'divas': divas,
         'hunks': hunks
     }
-    # print(context)
+    
     return render(request, 'base/home.html', context)
 
 
@@ -45,10 +45,6 @@ def divaHunkList(request):
             results=Diva.objects.all() 
             context.update(diva=results)
             context.update(isdiva=True)
-        
-        
-    # print(genderquery, searchquery)
-    print(context)
     
     return render(request, 'base/list.html',context)
 

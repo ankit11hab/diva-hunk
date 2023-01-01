@@ -61,7 +61,7 @@
   color: white;
 }
 
-@media (max-width: 550px) {
+@media (orientation:portrait) {
   .diva-big-logo-img {
     width: 80vw;
   }
@@ -94,7 +94,7 @@
   }
   .icon-imgs {
     align-items: flex-start;
-    width: 15vw;
+    width: 11vw;
     height: auto;
   }
   .mail {
