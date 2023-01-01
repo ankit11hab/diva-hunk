@@ -47,7 +47,7 @@
 }
 
 .diva-name {
-  font-family: "Circular Std Book";
+  font-family: "Outfit";
   font-size: 1.8vw;
   font-weight: 900;
 }
@@ -55,7 +55,7 @@
 .sharebtn {
   margin-left: 5%;
   font-size: 1.2vw;
-  font-family: "Circular Std Book";
+  font-family: "Outfit";
   font-weight: 500;
   width: 12vw;
   height: 3vw;
@@ -79,7 +79,7 @@
 }
 
 .institute {
-  font-family: "Circular Std Book";
+  font-family: "Outfit";
   font-size: 1.2vw;
   font-weight: 700;
 }
@@ -93,7 +93,7 @@
 }
 
 .label {
-  font-family: "Circular Std Book";
+  font-family: " Outfit";
   font-weight: 700;
   font-size: 1vw;
 }
@@ -149,7 +149,7 @@
 .finish-btn {
   color: #ffffff;
   background-color: #000000;
-  font-family: "Circular Std Book";
+  font-family: "Outfit";
   width: 7vw;
   height: 3vw;
   margin-left: 7vw;
@@ -187,7 +187,7 @@
     position: absolute;
     color: #000000;
     background-color: #ffffff;
-    font-family: "Circular Std Book";
+    font-family: "Outfit";
     top: 5%;
     left: 60%;
     border: 1px solid #ffffff;
