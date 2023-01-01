@@ -19,11 +19,12 @@
 .form-wide {
   box-sizing: border-box;
   display: flex;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
+  justify-content: space-around;
 }
-.registerForm {
-  margin-left: 10px;
-}
+/* .registerForm {
+  margin-left: 20px;
+} */
 
 .form-mob {
   display: none;
@@ -31,12 +32,12 @@
 
 .diva-img {
   width: 36vw;
-  height: 44vw;
+  /* height: 44vw; */
   margin-top: -1%;
 }
 
 .candidate-detail {
-  margin-bottom: 5vw;
+  margin-bottom: 2vw;
 }
 
 .heading {
@@ -174,8 +175,8 @@
   }
   .diva-img {
     width: 80vw;
-    height: 80vh;
-    margin: 10% auto;
+    /* height: 80vh; */
+    margin: 15% 0% 5% 0%;
   }
   .sharelinkbtn-mob {
     position: absolute;
@@ -190,6 +191,7 @@
     height: 7vw;
   }
   .candidate-detail {
+    margin-bottom: 0;
     text-align: center;
     bottom: -28%;
   }
@@ -206,7 +208,7 @@
     font-size: 3.3vw;
     width: 100vw;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
   }
   .label {
     font-size: 3.6vw;
