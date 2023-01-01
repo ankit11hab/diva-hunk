@@ -129,6 +129,7 @@
     position: relative;
     left: 65%;
     margin-top: -10%;
+    width: 30vw;
   }
   .right_mob {
     width: 70vw;
