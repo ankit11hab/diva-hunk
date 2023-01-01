@@ -56,7 +56,7 @@ def divaRegistration(request, pk):
         'candidate': candidate,
         'form': {},
         'message': "",
-        'disabled':"False",
+        'disabled':False,
         'name':'',
         'contactno':'',
         'email':'',
@@ -67,9 +67,10 @@ def divaRegistration(request, pk):
             context.update(form=form,message='form is invalid')
             return render(request, 'base/register.html', context)
         context.update(form=form)
-        voter = form.save(commit=False)
+        # voter = form.save(commit=False)
         
         if 'sendOTP' in request.POST:
+            voter = form.save(commit=False)
             find = Voter.objects.filter(email=voter.email)
             if (find.count() >= 1):
                 if (find[0].diva):
@@ -86,20 +87,15 @@ def divaRegistration(request, pk):
             return render(request, 'base/register.html', context)
 
         if 'verify' in request.POST:
-            if not voter.otp:
-                context.update(disabled='True')
-                context.update(name=request.POST['name'])
-                context.update(contactno=request.POST['contactno'])
-                context.update(email=request.POST['email'])
-                context.update(message='OTP required')
-                return render(request, 'base/register.html', context)
+            email = request.POST['email']
+            otp =  request.POST['otp_1']+request.POST['otp_2']+request.POST['otp_3']+request.POST['otp_4']
 
-            find = Voter.objects.filter(email=voter.email)
+            find = Voter.objects.filter(email=email)
             if not find.exists():
-                context.update(message='Email dose not match')
+                context.update(message='Email does not match')
                 return render(request, 'base/register.html', context)
 
-            if find[0].otp != voter.otp:
+            if find[0].otp != otp:
                 context.update(message='wrong otp')
                 context.update(disabled='True')
                 context.update(name=request.POST['name'])
@@ -124,7 +120,7 @@ def hunkRegistration(request, pk):
         'candidate': candidate,
         'form': {},
         'message': "",
-        'disabled':"False",
+        'disabled':False,
         'name':'',
         'contactno':'',
         'email':'',
@@ -135,8 +131,9 @@ def hunkRegistration(request, pk):
             context.update(form=form,message='form is invalid')
             return render(request, 'base/register.html', context)
         context.update(form=form)
-        voter = form.save(commit=False)
+        #voter = form.save(commit=False)
         if 'sendOTP' in request.POST:
+            voter = form.save(commit=False)
             find = Voter.objects.filter(email=voter.email)
             if (find.count() >= 1):
                 if (find[0].hunk):
@@ -153,21 +150,15 @@ def hunkRegistration(request, pk):
             return render(request, 'base/register.html', context)
 
         if 'verify' in request.POST:
-            if not voter.otp:
-                context.update(message='OTP required')
-                context.update(message='OTP sent successfully')
-                context.update(disabled='True')
-                context.update(name=request.POST['name'])
-                context.update(contactno=request.POST['contactno'])
-                context.update(email=request.POST['email'])
-                return render(request, 'base/register.html', context)
-
-            find = Voter.objects.filter(email=voter.email)
+            email = request.POST['email']
+            otp =  request.POST['otp_1']+request.POST['otp_2']+request.POST['otp_3']+request.POST['otp_4']
+            
+            find = Voter.objects.filter(email=email)
             if not find.exists():
                 context.update(message='Email dose not match')
                 return render(request, 'base/register.html', context)
 
-            if find[0].otp != voter.otp:
+            if find[0].otp != otp:
                 context.update(message='wrong otp')
                 context.update(message='OTP sent successfully')
                 context.update(disabled='True')

@@ -60,7 +60,7 @@
         <div class="input-topic">
           <div class="label" for=" exampleInputPassword1">E-mail</div>
           <div style="display: flex">
-            <input type="email" name="email" id="email" class="input input2 " name="email" required />
+            <input type="email" name="email" id="email" class="input input2 " required />
             <!-- {{form.email}} -->
 
             <button type="submit" name="sendOTP" id="sentdOTPbtn" class="sendOTPbtn">
@@ -69,6 +69,13 @@
           </div>
         </div>
         <div class="label" for=" exampleInputPassword2">OTP</div>
+
+        {% if disabled %}
+        <input type="text" name="name" class="input input2 " value="{{name}}"  required style="display:none" />
+        <input type="number" name="contactno" class="input input2 " value="{{contactno}}"  required style="display:none" />
+        <input type="email" name="email" class="input input2 " value="{{email}}"  required style="display:none" />
+        {% endif %}
+
         <div class="otp-input input-topic">
           <input
             type="text"
