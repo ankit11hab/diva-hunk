@@ -55,7 +55,11 @@ def divaRegistration(request, pk):
         'type': "Diva",
         'candidate': candidate,
         'form': {},
-        'message': ""
+        'message': "",
+        'disabled':"False",
+        'name':'',
+        'contactno':'',
+        'email':'',
     }
     if (request.method == 'POST'):
         form = VoterRegisterForm(request.POST)
@@ -75,10 +79,18 @@ def divaRegistration(request, pk):
                 voter.save()
             sendEmailOTP(voter.email)
             context.update(message='OTP sent successfully')
+            context.update(disabled='True')
+            context.update(name=request.POST['name'])
+            context.update(contactno=request.POST['contactno'])
+            context.update(email=request.POST['email'])
             return render(request, 'base/register.html', context)
 
         if 'verify' in request.POST:
             if not voter.otp:
+                context.update(disabled='True')
+                context.update(name=request.POST['name'])
+                context.update(contactno=request.POST['contactno'])
+                context.update(email=request.POST['email'])
                 context.update(message='OTP required')
                 return render(request, 'base/register.html', context)
 
@@ -89,6 +101,10 @@ def divaRegistration(request, pk):
 
             if find[0].otp != voter.otp:
                 context.update(message='wrong otp')
+                context.update(disabled='True')
+                context.update(name=request.POST['name'])
+                context.update(contactno=request.POST['contactno'])
+                context.update(email=request.POST['email'])
                 return render(request, 'base/register.html', context)
             
             candidate.votes+=1
@@ -107,7 +123,11 @@ def hunkRegistration(request, pk):
         'type': "Hunk",
         'candidate': candidate,
         'form': {},
-        'message': ""
+        'message': "",
+        'disabled':"False",
+        'name':'',
+        'contactno':'',
+        'email':'',
     }
     if (request.method == 'POST'):
         form = VoterRegisterForm(request.POST)
@@ -126,11 +146,20 @@ def hunkRegistration(request, pk):
                 voter.save()
             sendEmailOTP(voter.email)
             context.update(message='OTP sent successfully')
+            context.update(disabled='True')
+            context.update(name=request.POST['name'])
+            context.update(contactno=request.POST['contactno'])
+            context.update(email=request.POST['email'])
             return render(request, 'base/register.html', context)
 
         if 'verify' in request.POST:
             if not voter.otp:
                 context.update(message='OTP required')
+                context.update(message='OTP sent successfully')
+                context.update(disabled='True')
+                context.update(name=request.POST['name'])
+                context.update(contactno=request.POST['contactno'])
+                context.update(email=request.POST['email'])
                 return render(request, 'base/register.html', context)
 
             find = Voter.objects.filter(email=voter.email)
@@ -140,6 +169,11 @@ def hunkRegistration(request, pk):
 
             if find[0].otp != voter.otp:
                 context.update(message='wrong otp')
+                context.update(message='OTP sent successfully')
+                context.update(disabled='True')
+                context.update(name=request.POST['name'])
+                context.update(contactno=request.POST['contactno'])
+                context.update(email=request.POST['email'])
                 return render(request, 'base/register.html', context)
             
             candidate.votes+=1
