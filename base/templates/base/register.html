@@ -4,110 +4,129 @@
 
 <link rel="stylesheet" href="{% static '/css/register.css' %}" />
 <div style="color: red; font-size: 30px">{{message}}</div>
-<form method="POST" style="font-size: 30px">
-  {% csrf_token %}
-  <div
+<div
+  class="largest-box"
+  style="background-color: #333333; width: 100vw; height: auto; padding: 2% 0%"
+>
+  <form
+    method="POST"
     style="
-      display: flex;
-      font-family: 'Circular Std Book';
-      margin-left: 10%;
-      margin-top: 2%;
-      cursor: pointer;
+      font-size: 30px;
+      width: 90%;
+      height: auto;
+      border-radius: 3rem;
+      margin: auto;
+      background-color: white;
+      padding-top: 1%;
     "
-    onclick="window.location.href=`{% url 'home' %}`"
   >
-    <img
-      src="{% static '/images/Chevron-left.svg' %}"
-      style="width: 2vw; margin-right: 1%"
-    />
-    <div style="font-weight: 200; font-size: 2vw">Back</div>
-  </div>
-  <div class="form-wide">
-    <img src="{{candidate.image.url}}" class="diva-img" />
-    <div class="registerForm">
-      <div class="candidate-detail">
-        <div class="heading">
-          <h4>{{type}}’s Name</h4>
+    {% csrf_token %}
+    <div
+      style="
+        display: flex;
+        font-family: 'Circular Std Book';
+        margin-left: 10%;
+        cursor: pointer;
+      "
+      onclick="window.location.href=`{% url 'home' %}`"
+    >
+      <img
+        src="{% static '/images/Chevron-left.svg' %}"
+        style="width: 2vw; margin-right: 1%"
+      />
+      <div style="font-weight: 200; font-size: 2vw">Back</div>
+    </div>
+    <div class="form-wide">
+      <img src="{{candidate.image.url}}" class="diva-img" />
+      <div class="registerForm">
+        <div class="candidate-detail">
+          <div class="heading">
+            <h4>{{type}}’s Name</h4>
+          </div>
+          <div class="diva-name">
+            <h2>{{candidate.name}}</h2>
+            <button type="button" class="sharebtn" onclick="cpytxt()">
+              Share Link
+              <img
+                src="{% static '/images/ShareLink.png' %}"
+                class="share-link-img"
+              />
+            </button>
+          </div>
+          <div class="institute">Institute: IIT Guwahati</div>
         </div>
         <div class="diva-name">
           <h2>{{candidate.name}}</h2>
           <button type="button" class="sharebtn" onclick="cpytxt()">
             Share Link
+        <div class="instruction">
+          Please enter the required info to prevent multiple votes <br />We will
+          send an OTP to te entered Email for verification
+        </div>
+        <div class="input-topic">
+          <div class="label" for="exampleInputUser">Your Name</div>
+          <input type="text" class="input input1" />
+          <!-- {{form.name}} -->
+        </div>
+        <div class="input-topic">
+          <div class="label" for=" exampleInputEmail">Contact No.</div>
+          <input type="text" class="input input1" />
+          <!-- {{form.contact}} -->
+        </div>
+        <div class="input-topic">
+          <div class="label" for=" exampleInputPassword1">E-mail</div>
+          <div style="display: flex">
+            <input type="text" class="input input2" />
+            <!-- {{form.email}} -->
+
+            <button type="submit" name="sendOTP" class="sendOTPbtn">
+              Send OTP
+            </button>
+          </div>
+        </div>
+        <div class="label" for=" exampleInputPassword2">OTP</div>
+        <div class="otp-input input-topic">
+          <input
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            maxlength="1"
+            class="input otp-input"
+          />
+          <input
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            maxlength="1"
+            class="input otp-input"
+          />
+          <input
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            maxlength="1"
+            class="input otp-input"
+          />
+          <input
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            maxlength="1"
+            class="input otp-input"
+          />
+          <!-- {{form.otp}} -->
+          <button type="submit" name="verify" class="finish-btn">
+            Finish
             <img
-              src="{% static '/images/ShareLink.png' %}"
-              class="share-link-img"
+              src="{% static '/images/Chevron-right.svg' %}"
+              class="chevron-right-img"
             />
           </button>
         </div>
-        <div class="institute">Institute: IIT Guwahati</div>
-      </div>
-      <div class="instruction">
-        Please enter the required info to prevent multiple votes <br />We will
-        send an OTP to te entered Email for verification
-      </div>
-      <div class="input-topic">
-        <div class="label" for="exampleInputUser">Your Name</div>
-        <input type="text" class="input input1" />
-        <!-- {{form.name}} -->
-      </div>
-      <div class="input-topic">
-        <div class="label" for=" exampleInputEmail">Contact No.</div>
-        <input type="text" class="input input1" />
-        <!-- {{form.contact}} -->
-      </div>
-      <div class="input-topic">
-        <div class="label" for=" exampleInputPassword1">E-mail</div>
-        <div style="display: flex">
-          <input type="text" class="input input2" />
-          <!-- {{form.email}} -->
-
-          <button type="submit" name="sendOTP" class="sendOTPbtn">
-            Send OTP
-          </button>
-        </div>
-      </div>
-      <div class="label" for=" exampleInputPassword2">OTP</div>
-      <div class="otp-input input-topic">
-        <input
-          type="text"
-          pattern="[0-9]*"
-          inputmode="numeric"
-          maxlength="1"
-          class="input otp-input"
-        />
-        <input
-          type="text"
-          pattern="[0-9]*"
-          inputmode="numeric"
-          maxlength="1"
-          class="input otp-input"
-        />
-        <input
-          type="text"
-          pattern="[0-9]*"
-          inputmode="numeric"
-          maxlength="1"
-          class="input otp-input"
-        />
-        <input
-          type="text"
-          pattern="[0-9]*"
-          inputmode="numeric"
-          maxlength="1"
-          class="input otp-input"
-        />
-        <!-- {{form.otp}} -->
-        <button type="submit" name="verify" class="finish-btn">
-          Finish
-          <img
-            src="{% static '/images/Chevron-right.svg' %}"
-            class="chevron-right-img"
-          />
-        </button>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 
 <div class="form-mob" id="form-mob">
   <!-- <div style="display: flex; font-family: 'Circular Std Book'; margin-left: 10%; margin-top: 2%;">
@@ -121,7 +140,7 @@
   </div> 
   <div class="candidate-detail">
     <div class="heading">
-      <h4>Diva’s Name</h4>
+      <h4>{{type}}’s Name</h4>
     </div>
     <div class="diva-name">
       <h1>{{candidate.name}}</h1>
