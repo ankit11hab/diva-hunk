@@ -3,15 +3,14 @@
 <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
-  rel="stylesheet"
-/>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet" />
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
+  * {
+    /* scroll-behavior: smooth; */
+  }
+
   @font-face {
     font-family: TEXAT-BOLD-PERSONAL-USE;
     src: url('{% static "/fonts/TEXAT-BOLD-PERSONAL-USE.otf" %}');
@@ -33,7 +32,7 @@
 
     .largest-box {
       position: sticky;
-      top:1rem;
+      top: 1rem;
       background-color: #212121;
       /* width: 98vw; */
       height: calc(100vh - 1rem);
@@ -61,14 +60,20 @@
       /* scroll-snap-type: y mandatory; */
       scrollbar-width: none;
       box-sizing: content-box;
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer 10+ */
+      scrollbar-width: none;
+      /* Firefox */
     }
+
     .diva-scroller::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
+      display: none;
+      /* Safari and Chrome */
     }
+
     .hunk-scroller::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
+      display: none;
+      /* Safari and Chrome */
     }
 
     .hunk-scroller {
@@ -78,8 +83,10 @@
       height: 100%;
       width: 21%;
       scroll-snap-type: y mandatory;
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer 10+ */
+      scrollbar-width: none;
+      /* Firefox */
     }
 
     .card-place {
@@ -133,11 +140,13 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+
     #searchbox input::placeholder {
       font-size: large;
       font-weight: bold;
       font-size: 1vw;
     }
+
     .searchbox_input {
       text-align: center;
       top: 2vw;
@@ -382,6 +391,7 @@
       font-size: 36px;
       margin: 2rem 0;
     }
+
     #searchbox {
       margin-top: 2vw;
     }
@@ -396,6 +406,7 @@
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       opacity: 0.4;
     }
+
     .searchbox_input::placeholder {
       font-size: 5vw;
     }
@@ -545,7 +556,7 @@
     }
   }
 </style>
-<div class="intro">
+<div class="intro" id="intro">
   <div class="hero-section">
     <img src="{% static '/images/hero.svg' %}" class="hero-img" />
   </div>
@@ -562,16 +573,11 @@
   <div class="content-container">
     <form method="GET" action="{% url 'list' %}" id="searchbox">
       {% csrf_token %}
-      <input
-        type="text"
-        name="search"
-        placeholder="Search for the participant by name"
-        class="searchbox_input"
-      />
+      <input type="text" name="search" placeholder="Search for the participant by name" class="searchbox_input" />
       {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
     </form>
     <div class="dh-title-mobile">
-      <p class="diva-part-title">
+      <p class="diva-part-title" id="check-view">
         <span style="font-family: 'Circular Std', sans-serif">Alcher</span>
         <span style="font-family: 'Berkshire Swash', cursive">Diva</span>
       </p>
@@ -591,12 +597,8 @@
               </div>
             </div>
             <div class="card-text">
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+              <div class="like-button" onclick="window.location.href=`{% url 'diva register' diva.id %}`">
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
@@ -608,7 +610,6 @@
       </div>
       {%endfor%}
 
-      <div class="d-card"></div>
     </div>
     <form method="Get" action="{% url 'list' %}">
       <button class="view-all-mobile" name="Diva">View All</button>
@@ -632,7 +633,6 @@
     </div>
     <div class="hunk-scroller">
       {% comment %}
-      <div class="d-card"></div>
       {% endcomment %} {%for hunk in hunks%}
       <div class="card-place">
         <div class="temp">
@@ -645,12 +645,8 @@
               </div>
             </div>
             <div class="card-text">
-              <div
-                class="like-button"
-                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
-              >
-                <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+              <div class="like-button" onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
+                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Like</span>
               </div>
               <br />
               <div class="college-name">
@@ -696,9 +692,41 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script>
-  window.onscroll = function () {
-    myFunction();
+
+  let flag = 0;
+  $.fn.isInViewport = function () {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
   };
+
+  $(window).bind('mousewheel', function (event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+      if(flag=1) {
+        flag=0;
+      }
+    }
+    else {
+      if (flag) {
+        
+      }
+      else {
+        flag=1;
+        $('html, body').animate({
+          scrollTop: $("#largest-box").offset().top
+        }, 500);
+      }
+    }
+  });
+
+  
+  // window.onscroll = function () {
+    // scrollFunc();
+  // };
   //for automatic home page scrolling
   function myFunction() {
     var element = document.getElementById("largest-box");
