@@ -589,7 +589,7 @@
     </div>
                 <!-- <div class="content-container" style="height: 80vh;"> -->
 
-    <div class="diva-scroller">
+    <div id="divaSc" class=" custom-scrollbar-js p-2 diva-scroller">
 
       <div >
       {% comment %}
@@ -647,7 +647,7 @@
   <!-- </div> -->
           <!-- <div class="content-container" style="height: 80vh;"> -->
           
-    <div class="hunk-scroller">
+    <div id="hunkSc" class=" custom-scrollbar-js p-2 hunk-scroller">
       {% comment %}
       <div class="d-card"></div>
 
@@ -768,12 +768,12 @@
 {% endcomment %} 
 <script type="text/javascript">
   $(function(){
-    $('.hunk-scroller').mCustomScrollbar({
+    $('#hunkSc').mCustomScrollbar({
       theme:"rounded-dark"
     });
   });
   $(function(){
-    $('.diva-scroller').mCustomScrollbar({
+    $('#divaSc').mCustomScrollbar({
       theme:"rounded-dark"
     });
   });
