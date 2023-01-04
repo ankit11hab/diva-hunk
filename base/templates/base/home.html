@@ -441,7 +441,10 @@
       justify-content: center;
       align-items: center;
     }
-
+    .card-place:hover{
+      cursor:pointer;
+    }
+  
     .material-symbols-outlined {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
       font-size: 18px;
@@ -599,7 +602,7 @@
       {% endcomment %} {% for diva in divas %}
       <div class="card-place">
         <div class="temp">
-          <div class="card">
+          <div class="card"  onclick="window.location.href=`{% url 'diva register' diva.id %}`">
             <div class="img-container">
               <span class="black-text">{{diva.name}}</span>
               <div class="card-img">
@@ -610,7 +613,7 @@
             <div class="card-text">
               <div
                 class="like-button"
-                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
+              
               >
                 <span class="material-symbols-outlined">favorite </span
                 ><span class="like-styling"> Vote</span>
@@ -649,7 +652,7 @@
       {% comment %} {% endcomment %} {%for hunk in hunks%}
       <div class="card-place">
         <div class="temp">
-          <div class="card">
+          <div class="card"  onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
             <div class="img-container">
               <span class="black-text">{{hunk.name}}</span>
               <div class="card-img">
@@ -660,7 +663,7 @@
             <div class="card-text">
               <div
                 class="like-button"
-                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
+               
               >
                 <span class="material-symbols-outlined">favorite </span
                 ><span class="like-styling"> Vote</span>
