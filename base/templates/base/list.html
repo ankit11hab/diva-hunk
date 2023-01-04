@@ -679,7 +679,8 @@
       </div>
       <div class="card-container">
         {%for item in diva%}
-        <div class="card">
+        <div class="card"
+          onclick="window.location.href=`{% url 'diva register' item.id %}`">
           <div class="card-all">
             <div
               class="img-container-all"
@@ -687,7 +688,6 @@
             >
               <div
                 class="like-button"
-                onclick="window.location.href=`{% url 'diva register' item.id %}`"
               >
                 <span class="material-symbols-outlined">favorite </span
                 ><span class="like-styling-all"> Vote</span>
@@ -704,7 +704,7 @@
           </div>
         </div>
         {%endfor%} {%for item in hunk%}
-        <div class="card">
+        <div class="card"  onclick="window.location.href=`{% url 'hunk register' item.id %}`">
           <div class="card-all">
             <div
               class="img-container-all"
@@ -712,7 +712,7 @@
             >
               <div
                 class="like-button"
-                onclick="window.location.href=`{% url 'hunk register' item.id %}`"
+               
               >
                 <span class="material-symbols-outlined">favorite </span
                 ><span class="like-styling-all"> Vote</span>
