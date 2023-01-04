@@ -181,6 +181,9 @@
     z-index: 6;
     transition: all 0.7s ease-in-out;
   }
+  .card-img:hover{
+    cursor: pointer;
+  }
 
   .card-img img {
     height: 100%;
