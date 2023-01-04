@@ -3,9 +3,14 @@
 <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet" />
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
 <style>
   * {
     /* scroll-behavior: smooth; */
@@ -343,7 +348,6 @@
     }
 
     .content-container {
-      overflow: hidden;
       width: 100%;
       background-color: white;
       display: flex;
@@ -575,7 +579,12 @@
   <div class="content-container">
     <form method="GET" action="{% url 'list' %}" id="searchbox">
       {% csrf_token %}
-      <input type="text" name="search" placeholder="Search for the participant by name" class="searchbox_input" />
+      <input
+        type="text"
+        name="search"
+        placeholder="Search for the participant by name"
+        class="searchbox_input"
+      />
       {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
     </form>
     <div class="dh-title-mobile">
@@ -599,8 +608,12 @@
               </div>
             </div>
             <div class="card-text">
-              <div class="like-button" onclick="window.location.href=`{% url 'diva register' diva.id %}`">
-                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Vote</span>
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling"> Vote</span>
               </div>
               <br />
               <div class="college-name">
@@ -611,7 +624,6 @@
         </div>
       </div>
       {%endfor%}
-
     </div>
     <form method="Get" action="{% url 'list' %}">
       <button class="view-all-mobile" name="Diva">View All</button>
@@ -634,8 +646,7 @@
       </p>
     </div>
     <div class="hunk-scroller">
-      {% comment %}
-      {% endcomment %} {%for hunk in hunks%}
+      {% comment %} {% endcomment %} {%for hunk in hunks%}
       <div class="card-place">
         <div class="temp">
           <div class="card">
@@ -647,8 +658,12 @@
               </div>
             </div>
             <div class="card-text">
-              <div class="like-button" onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
-                <span class="material-symbols-outlined">favorite </span><span class="like-styling"> Vote</span>
+              <div
+                class="like-button"
+                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
+              >
+                <span class="material-symbols-outlined">favorite </span
+                ><span class="like-styling"> Vote</span>
               </div>
               <br />
               <div class="college-name">
@@ -659,7 +674,6 @@
         </div>
       </div>
       {%endfor%}
-
     </div>
     <form method="Get" action="{% url 'list' %}">
       <button class="view-all-mobile" name="Hunk">View All</button>
@@ -693,7 +707,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script>
-
   let flag = 0;
   $.fn.isInViewport = function () {
     var elementTop = $(this).offset().top;
@@ -705,28 +718,27 @@
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
-  $(window).bind('mousewheel', function (event) {
+  $(window).bind("mousewheel", function (event) {
     if (event.originalEvent.wheelDelta >= 0) {
-      if(flag=1) {
-        flag=0;
+      if ((flag = 1)) {
+        flag = 0;
       }
-    }
-    else {
+    } else {
       if (flag) {
-        
-      }
-      else {
-        flag=1;
-        $('html, body').animate({
-          scrollTop: $("#largest-box").offset().top
-        }, 500);
+      } else {
+        flag = 1;
+        $("html, body").animate(
+          {
+            scrollTop: $("#largest-box").offset().top,
+          },
+          500
+        );
       }
     }
   });
 
-  
   // window.onscroll = function () {
-    // scrollFunc();
+  // scrollFunc();
   // };
   //for automatic home page scrolling
   function myFunction() {
