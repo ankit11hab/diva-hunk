@@ -66,6 +66,9 @@
   border-radius: 1vw;
   background-color: #ffffff;
 }
+.sharebtn:hover{
+  cursor: pointer;
+}
 
 .share-link-img {
   margin-left: 5%;
