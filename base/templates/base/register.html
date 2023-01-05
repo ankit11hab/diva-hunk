@@ -3,25 +3,16 @@
 <!-- <div style="font-size: 30px">Voting for {{candidate.name}}</div> -->
 
 <link rel="stylesheet" href="{% static '/css/register.css' %}" />
-<div style="color: red; font-size: 30px">{{message}}</div>
 <div class="largest-box" style="background-color: #212121; height: 120vh; padding: 5vw 0%;position: sticky;top: -25vh;">
+  <div style="color: red; font-size: 30px">{{message}}</div>
   <form
     method="POST"
-    style="
-      font-size: 30px;
-      width: 90%;
-      height: auto;
-      border-radius: 3rem;
-      margin: auto;
-      background-color: white;
-      padding-top: 1%;
-    "
-  >
+    style="font-size: 30px;width: 90%;height: auto;border-radius: 3rem;margin: auto;background-color: white;padding-top: 1%;">
     {% csrf_token %}
     <div
       style="
         display: flex;
-        font-family: 'Circular Std Book';
+        font-family: 'outfit';
         margin-left: 10%;
         cursor: pointer;
       "
@@ -29,9 +20,9 @@
     >
       <img
         src="{% static '/images/Chevron-left.svg' %}"
-        style="width: 2vw; margin-right: 1%"
+        style="width: 1.5vw; margin-right: 1%"
       />
-      <div style="font-weight: 200; font-size: 2vw">Back</div>
+      <div style="font-weight: 200; font-size: 1.5vw">Back</div>
     </div>
     <div class="form-wide">
       <img src="{{candidate.image.url}}" class="diva-img" />
@@ -58,57 +49,64 @@
         </div>
         <div class="input-topic">
           <div class="label" for="exampleInputUser">Your Name</div>
-          <input type="text" class="input input1" />
+          <input type="text" name="name" id="name" class="input input1 inputs" required />
           <!-- {{form.name}} -->
         </div>
         <div class="input-topic">
           <div class="label" for=" exampleInputEmail">Contact No.</div>
-          <input type="text" class="input input1" />
+          <input type="number" name="contactno" id="contactno" class="input input1" required />
           <!-- {{form.contact}} -->
         </div>
         <div class="input-topic">
           <div class="label" for=" exampleInputPassword1">E-mail</div>
           <div style="display: flex">
-            <input type="text" class="input input2" />
+            <input type="email" name="email" id="email" class="input input2 " required />
             <!-- {{form.email}} -->
 
-            <button type="submit" name="sendOTP" class="sendOTPbtn">
+            <button type="submit" name="sendOTP" id="sentdOTPbtn" class="sendOTPbtn">
               Send OTP
             </button>
           </div>
         </div>
         <div class="label" for=" exampleInputPassword2">OTP</div>
+
+        {% if disabled %}
+        <input type="text" name="name" class="input input2 " value="{{name}}"  required style="display:none" />
+        <input type="number" name="contactno" class="input input2 " value="{{contactno}}"  required style="display:none" />
+        <input type="email" name="email" class="input input2 " value="{{email}}"  required style="display:none" />
+        {% endif %}
+
         <div class="otp-input input-topic">
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input"
+            class="input otp-input" name="otp_1"
           />
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input"
+            class="input otp-input" name="otp_2"
           />
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input"
+            class="input otp-input" name="otp_3"
           />
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input"
+            class="input otp-input" name="otp_4"
           />
           <!-- {{form.otp}} -->
-          <button type="submit" name="verify" class="finish-btn">
+          <button type="submit" name="verify" class="finish-btn" disabled>
             Finish
             <img
               src="{% static '/images/Chevron-right.svg' %}"
@@ -122,7 +120,7 @@
 </div>
 
 <div class="form-mob" id="form-mob">
-  <!-- <div style="display: flex; font-family: 'Circular Std Book'; margin-left: 10%; margin-top: 2%;">
+  <!-- <div style="display: flex; font-family: 'outfit'; margin-left: 10%; margin-top: 2%;">
     <img src="{% static '/images/Chevron-left.svg' %}" style="width: 3vw; margin-right: 1%;" />
     <div style="font-weight: 200; font-size: 2.5vw;">Back</div>
   </div> -->
@@ -148,21 +146,21 @@
   <div style="width: 95vw; margin-left: 5vw; margin-top: 8vw; width: 80vw">
     <div class="input-topic">
       <div class="label" for="exampleInputUser">Your Name</div>
-      <input type="text" class="input input1" />
+      <input type="text" class="input input1 " id="name" name="name" required/>
       <!-- {{form.name}} -->
     </div>
     <div class="input-topic">
       <div class="label" for=" exampleInputEmail">Contact No.</div>
-      <input type="text" class="input input1" />
+      <input type="number" class="input input1 " id="contactno" name="contactno" required/>
       <!-- {{form.contact}} -->
     </div>
     <div class="input-topic">
       <div class="label" for=" exampleInputPassword1">E-mail</div>
       <div>
-        <input type="text" class="input input2" />
+        <input type="email" class="input input2  " id="email" name="email" required/>
         <!-- {{form.email}} -->
       </div>
-      <button type="submit" name="sendOTP" class="sendOTPbtn">Send OTP</button>
+      <button type="submit" name="sendOTP" id="sentdOTPbtn" class="sendOTPbtn">Send OTP</button>
     </div>
     <div class="label" for=" exampleInputPassword2">OTP</div>
     <div class="otp-input input-topic">
@@ -171,32 +169,32 @@
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input"
+        class="input otp-input" name="otp_1"
       />
       <input
         type="text"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input"
+        class="input otp-input" name="otp_2"
       />
       <input
         type="text"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input"
+        class="input otp-input" name="otp_3"
       />
       <input
         type="text"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input"
+        class="input otp-input" name="otp_4"
       />
       <!-- {{form.otp}} -->
     </div>
-    <button type="submit" name="verify" class="finish-btn">
+    <button type="submit" name="verify" class="finish-btn" disabled>
       Finish
       <!-- <img
         src="{% static '/images/Chevron-right.svg' %}"
@@ -208,6 +206,25 @@
 <script type="text/javascript">
   function cpytxt() {
     navigator.clipboard.writeText(window.location.href);
+  }
+</script>
+<script>
+  if("{{disabled}}" == 'True'){
+    document.getElementById('name').value= "{{name}}";
+    document.getElementById('name').disabled= "true";
+    document.getElementById('contactno').value= "{{contactno}}";
+    document.getElementById('contactno').disabled= "true";
+    document.getElementById('email').value= "{{email}}";
+    document.getElementById('email').disabled= "true";
+    document.getElementById("sentdOTPbtn").disabled="true";
+    document.getElementById("sentdOTPbtn").style.cursor="default";
+    document.getElementsByName('otp_1')[0].required = true;
+    document.getElementsByName('otp_2')[0].required = true;
+    document.getElementsByName('otp_3')[0].required = true; 
+    document.getElementsByName('otp_4')[0].required = true;
+    document.getElementsByName('verify')[0].disabled = false;
+    document.getElementsByName('verify')[0].style.cursor = 'pointer';
+    
   }
 </script>
 

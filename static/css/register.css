@@ -19,24 +19,26 @@
 .form-wide {
   box-sizing: border-box;
   display: flex;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
+  justify-content: space-around;
 }
-.registerForm {
-  margin-left: 10px;
-}
+/* .registerForm {
+  margin-left: 20px;
+} */
 
 .form-mob {
   display: none;
 }
 
 .diva-img {
-  width: 36vw;
-  height: 44vw;
+  width: 29vw;
+  object-fit: cover;
+  /* height: 44vw; */
   margin-top: -1%;
 }
 
 .candidate-detail {
-  margin-bottom: 5vw;
+  margin-bottom: 2vw;
 }
 
 .heading {
@@ -45,22 +47,27 @@
 }
 
 .diva-name {
-  font-family: "Circular Std Book";
-  font-size: 2.5vw;
+  font-family: "Outfit";
+  font-size: 1.8vw;
+  font-weight: 900;
 }
 
 .sharebtn {
   margin-left: 5%;
   font-size: 1.2vw;
-  font-family: "Circular Std Book";
+  font-family: "Outfit";
   font-weight: 500;
   width: 12vw;
   height: 3vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border: 1.5px solid black;
+  border-radius: 1vw;
   background-color: #ffffff;
+}
+.sharebtn:hover{
+  cursor: pointer;
 }
 
 .share-link-img {
@@ -69,13 +76,14 @@
 }
 
 .diva-name {
+  margin-top: 1vw;
   display: flex;
   flex-direction: row;
 }
 
 .institute {
-  font-family: "Circular Std Book";
-  font-size: 1.5vw;
+  font-family: "Outfit";
+  font-size: 1.2vw;
   font-weight: 700;
 }
 
@@ -83,14 +91,14 @@
   color: #5b5858;
   font-family: "Outfit";
   font-weight: 400;
-  font-size: 1.2vw;
+  font-size: 0.9vw;
   margin-bottom: 2vw;
 }
 
 .label {
-  font-family: "Circular Std Book";
+  font-family: "outfit";
   font-weight: 700;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 .input-topic {
@@ -100,7 +108,8 @@
 .input {
   background: rgba(250, 250, 250, 0.93);
   box-sizing: border-box;
-  border: 2px solid #e1e1e1;
+  border: 1px solid #e1e1e1;
+  padding: 0 2%;
   border-radius: 0.8vw;
 }
 
@@ -121,8 +130,8 @@
   background-color: #ffffff;
   width: 8vw;
   height: 2.8vw;
+  border: 1.5px solid black;
   border-radius: 0.8vw;
-  border: 2px solid #000000;
 }
 
 .otp-input {
@@ -143,7 +152,7 @@
 .finish-btn {
   color: #ffffff;
   background-color: #000000;
-  font-family: "Circular Std Book";
+  font-family: "Outfit";
   width: 7vw;
   height: 3vw;
   margin-left: 7vw;
@@ -174,14 +183,14 @@
   }
   .diva-img {
     width: 80vw;
-    height: 80vh;
-    margin: 10% auto;
+    /* height: 80vh; */
+    margin: 15% 0% 5% 0%;
   }
   .sharelinkbtn-mob {
     position: absolute;
     color: #000000;
     background-color: #ffffff;
-    font-family: "Circular Std Book";
+    font-family: "Outfit";
     top: 5%;
     left: 60%;
     border: 1px solid #ffffff;
@@ -190,6 +199,7 @@
     height: 7vw;
   }
   .candidate-detail {
+    margin-bottom: 0;
     text-align: center;
     bottom: -28%;
   }
@@ -206,7 +216,7 @@
     font-size: 3.3vw;
     width: 100vw;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
   }
   .label {
     font-size: 3.6vw;

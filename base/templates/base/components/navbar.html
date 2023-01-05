@@ -2,12 +2,12 @@
 <link rel = "stylesheet" href = "{% static '/css/navbar.css' %}">
 <div class="navbar-body">
     <div class="diva-logo">
-        <img src = "{% static '/images/diva_logo.svg' %}" class="diva-logo-img" />
+        <a href="{% url 'home' %}"><img src = "{% static '/images/diva_logo.svg' %}" class="diva-logo-img" /></a>
     </div>
     <div class="alcher-heading">
-        ALCHERINGA
+        <a href='https://www.alcheringa.in/' target="_blank">ALCHERINGA</a>
     </div>
     <div class="alcher-logo">
-        <img src = "{% static '/images/alcher_logo.svg' %}" class="alcher-logo-img" />
+        <a href='https://www.alcheringa.in/' target="_blank"><img src = "{% static '/images/alcher_logo.svg' %}" class="alcher-logo-img" /></a>
     </div>
 </div>

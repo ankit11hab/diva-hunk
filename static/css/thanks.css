@@ -52,7 +52,7 @@
   position: relative;
   left: 45%;
   width: 47vw;
-  font-family: "Circular Std Book";
+  font-family: "outfit";
   padding-top: 15%;
   padding-left: 5%;
 }
@@ -135,7 +135,7 @@
     width: 70vw;
     margin-top: 10%;
     margin-bottom: 20%;
-    font-family: "Circular Std Book";
+    font-family: "outfit";
     display: flex;
     flex-direction: column;
     text-align: center;

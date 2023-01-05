@@ -12,6 +12,10 @@
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 />
 <style>
+  * {
+    /* scroll-behavior: smooth; */
+  }
+
   @font-face {
     font-family: TEXAT-BOLD-PERSONAL-USE;
     src: url('{% static "/fonts/TEXAT-BOLD-PERSONAL-USE.otf" %}');
@@ -33,10 +37,10 @@
 
     .largest-box {
       position: sticky;
-      top:1rem;
+      top: 1rem;
       background-color: #212121;
       /* width: 98vw; */
-      height: calc(100vh - 1rem);
+      height: 102vh;
     }
 
     .content-container {
@@ -61,14 +65,20 @@
       /* scroll-snap-type: y mandatory; */
       scrollbar-width: none;
       box-sizing: content-box;
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer 10+ */
+      scrollbar-width: none;
+      /* Firefox */
     }
+
     .diva-scroller::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
+      display: none;
+      /* Safari and Chrome */
     }
+
     .hunk-scroller::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
+      display: none;
+      /* Safari and Chrome */
     }
 
     .hunk-scroller {
@@ -78,8 +88,10 @@
       height: 100%;
       width: 21%;
       scroll-snap-type: y mandatory;
-      -ms-overflow-style: none; /* Internet Explorer 10+ */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer 10+ */
+      scrollbar-width: none;
+      /* Firefox */
     }
 
     .card-place {
@@ -130,14 +142,15 @@
       text-align: center;
       font-size: large;
       border-radius: 0.5vw;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.2),
+        0 6px 20px 0 rgba(162, 162, 162, 0.19);
     }
+
     #searchbox input::placeholder {
       font-size: large;
-      font-weight: bold;
       font-size: 1vw;
     }
+
     .searchbox_input {
       text-align: center;
       top: 2vw;
@@ -162,8 +175,8 @@
 
     .view-all-buttons {
       font-family: "Circular Std", sans-serif;
-      width: 12%;
-      font-size: 1.2rem;
+      width: 10%;
+      font-size: 1.05vw;
       color: white;
       padding: 0.3rem;
       background: none;
@@ -171,7 +184,7 @@
       text-align: center;
       border: 1px solid white;
       border-radius: 2rem;
-      margin: 0 9%;
+      margin: 0 11%;
     }
 
     .contact-us {
@@ -255,7 +268,7 @@
       justify-content: center;
       width: fit-content;
       background-color: white;
-      box-shadow: 0px 0px 3px 2px;
+      /* box-shadow: 0px 0px 3px 2px; */
       padding: 2px 20px;
       border: 0px;
       border-radius: 7px;
@@ -329,13 +342,12 @@
     .largest-box {
       /* overflow: hidden; */
       position: sticky;
-      top: -44vh;
+      top: -30vh;
       width: 99vw;
-      height: 160vh;
+      height: 117vh;
     }
 
     .content-container {
-      overflow: hidden;
       width: 100%;
       background-color: white;
       display: flex;
@@ -354,7 +366,7 @@
       scrollbar-width: none;
       overflow-y: scroll;
       width: 100%;
-      height: 50vh;
+      height: 36vh;
       scroll-snap-type: x mandatory;
     }
 
@@ -382,6 +394,7 @@
       font-size: 36px;
       margin: 2rem 0;
     }
+
     #searchbox {
       margin-top: 2vw;
     }
@@ -392,12 +405,16 @@
       text-align: center;
       /* padding: 0.8vw 0;  */
       border-radius: 0.8vw;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px 0;
+      outline: none;
+      border: 0.5px solid rgb(211, 211, 211);
+      box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.2),
+        0 6px 20px 0 rgba(162, 162, 162, 0.19);
       opacity: 0.4;
     }
+
     .searchbox_input::placeholder {
-      font-size: 5vw;
+      font-size: 3vw;
     }
 
     .after-container {
@@ -424,7 +441,10 @@
       justify-content: center;
       align-items: center;
     }
-
+    .card-place:hover{
+      cursor:pointer;
+    }
+  
     .material-symbols-outlined {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
       font-size: 18px;
@@ -467,8 +487,8 @@
       justify-content: center;
       width: fit-content;
       background-color: white;
-      box-shadow: 0px 0px 3px 2px;
-      padding: 2px 20px;
+      /* box-shadow: 0px 0px 3px 2px; */
+      padding: 0.2vw 1.6vw;
       border: 0px;
       border-radius: 7px;
       transform: scale(1.5);
@@ -545,12 +565,12 @@
     }
   }
 </style>
-<div class="intro">
+<div class="intro" id="intro">
   <div class="hero-section">
     <img src="{% static '/images/hero.svg' %}" class="hero-img" />
   </div>
   <div class="hero-section-mob">
-    <img src="{% static '/images/hero-mob.svg' %}" class="hero-img" />
+    <img src="{% static '/images/Frame 2.svg' %}" class="hero-img" />
   </div>
   <div class="scroll-down">
     <img src="{% static '/images/scroll_down.svg' %}" class="scroll-down-img" />
@@ -571,7 +591,7 @@
       {% comment %} FORM IS SUBMITTED ON PRESSING ENTER KEY {% endcomment %}
     </form>
     <div class="dh-title-mobile">
-      <p class="diva-part-title">
+      <p class="diva-part-title" id="check-view">
         <span style="font-family: 'Circular Std', sans-serif">Alcher</span>
         <span style="font-family: 'Berkshire Swash', cursive">Diva</span>
       </p>
@@ -582,7 +602,7 @@
       {% endcomment %} {% for diva in divas %}
       <div class="card-place">
         <div class="temp">
-          <div class="card">
+          <div class="card"  onclick="window.location.href=`{% url 'diva register' diva.id %}`">
             <div class="img-container">
               <span class="black-text">{{diva.name}}</span>
               <div class="card-img">
@@ -593,10 +613,10 @@
             <div class="card-text">
               <div
                 class="like-button"
-                onclick="window.location.href=`{% url 'diva register' diva.id %}`"
+              
               >
                 <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+                ><span class="like-styling"> Vote</span>
               </div>
               <br />
               <div class="college-name">
@@ -607,8 +627,6 @@
         </div>
       </div>
       {%endfor%}
-
-      <div class="d-card"></div>
     </div>
     <form method="Get" action="{% url 'list' %}">
       <button class="view-all-mobile" name="Diva">View All</button>
@@ -631,12 +649,10 @@
       </p>
     </div>
     <div class="hunk-scroller">
-      {% comment %}
-      <div class="d-card"></div>
-      {% endcomment %} {%for hunk in hunks%}
+      {% comment %} {% endcomment %} {%for hunk in hunks%}
       <div class="card-place">
         <div class="temp">
-          <div class="card">
+          <div class="card"  onclick="window.location.href=`{% url 'hunk register' hunk.id %}`">
             <div class="img-container">
               <span class="black-text">{{hunk.name}}</span>
               <div class="card-img">
@@ -647,10 +663,10 @@
             <div class="card-text">
               <div
                 class="like-button"
-                onclick="window.location.href=`{% url 'hunk register' hunk.id %}`"
+               
               >
                 <span class="material-symbols-outlined">favorite </span
-                ><span class="like-styling"> Like</span>
+                ><span class="like-styling"> Vote</span>
               </div>
               <br />
               <div class="college-name">
@@ -661,8 +677,6 @@
         </div>
       </div>
       {%endfor%}
-
-      <div class="d-card"></div>
     </div>
     <form method="Get" action="{% url 'list' %}">
       <button class="view-all-mobile" name="Hunk">View All</button>
@@ -696,9 +710,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script>
-  window.onscroll = function () {
-    myFunction();
+  let flag = 0;
+  $.fn.isInViewport = function () {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
   };
+
+  $(window).bind("mousewheel", function (event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+      if ((flag = 1)) {
+        flag = 0;
+      }
+    } else {
+      if (flag) {
+      } else {
+        flag = 1;
+        $("html, body").animate(
+          {
+            scrollTop: $("#largest-box").offset().top,
+          },
+          500
+        );
+      }
+    }
+  });
+
+  // window.onscroll = function () {
+  // scrollFunc();
+  // };
   //for automatic home page scrolling
   function myFunction() {
     var element = document.getElementById("largest-box");
