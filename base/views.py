@@ -78,7 +78,7 @@ def divaRegistration(request, pk):
                     return render(request, 'base/register.html', context)
             else:
                 voter.save()
-            sendEmailOTP(voter.email)
+            # sendEmailOTP(voter.email)
             context.update(message='OTP sent successfully')
             context.update(disabled='True')
             context.update(name=request.POST['name'])
@@ -141,7 +141,7 @@ def hunkRegistration(request, pk):
                     return render(request, 'base/register.html', context)
             else:
                 voter.save()
-            sendEmailOTP(voter.email)
+            # sendEmailOTP(voter.email)
             context.update(message='OTP sent successfully')
             context.update(disabled='True')
             context.update(name=request.POST['name'])

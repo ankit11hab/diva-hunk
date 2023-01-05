@@ -4,7 +4,7 @@
 
 <link rel="stylesheet" href="{% static '/css/register.css' %}" />
 <div class="largest-box" style="background-color: #212121; height: 120vh; padding: 5vw 0%;position: sticky;top: -25vh;">
-  <div style="color: red; font-size: 30px">{{message}}</div>
+  
   <form
     method="POST"
     style="font-size: 30px;width: 90%;height: auto;border-radius: 3rem;margin: auto;background-color: white;padding-top: 1%;">
@@ -42,11 +42,13 @@
             </button>
           </div>
           <div class="institute">Institute: IIT Guwahati</div>
+          
         </div>
         <div class="instruction">
           Please enter the required info to prevent multiple votes <br />We will
           send an OTP to te entered Email for verification
         </div>
+        <div style="color: green;padding-bottom: 0px;" class="institute">{{message}}</div>
         <div class="input-topic">
           <div class="label" for="exampleInputUser">Your Name</div>
           <input type="text" name="name" id="name" class="input input1 inputs" required />
@@ -80,30 +82,38 @@
           <input
             type="text"
             pattern="[0-9]*"
+            id="tx1"
             inputmode="numeric"
             maxlength="1"
             class="input otp-input" name="otp_1"
+            onkeyup="move(event,'', 'tx1', 'tx2')"
           />
           <input
             type="text"
+            id="tx2"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
             class="input otp-input" name="otp_2"
+            onkeyup="move(event,'tx1', 'tx2', 'tx3')"
           />
           <input
             type="text"
+            id="tx3"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
             class="input otp-input" name="otp_3"
+            onkeyup="move(event,'tx2', 'tx3', 'tx4')"
           />
           <input
             type="text"
+            id="tx4"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
             class="input otp-input" name="otp_4"
+            onkeyup="move(event,'tx3', 'tx4', '')"
           />
           <!-- {{form.otp}} -->
           <button type="submit" name="verify" class="finish-btn" disabled>
@@ -166,31 +176,39 @@
     <div class="otp-input input-topic">
       <input
         type="text"
+        id="txt1"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
         class="input otp-input" name="otp_1"
+        onkeyup="move(event,'', 'txt1', 'txt2')"
       />
       <input
         type="text"
+        id="txt2"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
         class="input otp-input" name="otp_2"
+        onkeyup="move(event,'txt1', 'txt2', 'txt3')"
       />
       <input
         type="text"
+        id="txt3"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
         class="input otp-input" name="otp_3"
+        onkeyup="move(event,'txt2', 'txt3', 'txt4')"
       />
       <input
         type="text"
+        id="txt4"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
         class="input otp-input" name="otp_4"
+        onkeyup="move(event,'txt3', 'txt4', '')"
       />
       <!-- {{form.otp}} -->
     </div>
@@ -207,8 +225,47 @@
   function cpytxt() {
     navigator.clipboard.writeText(window.location.href);
   }
+  function move(e,p,c,n){
+    var length = document.getElementById(c).value.length;
+    var maxlength = document.getElementById(c).getAttribute("maxlength");
+    if(length==maxlength){
+      if(n != ""){
+        document.getElementById(n).focus();
+
+      }
+      
+    }
+
+    if(e.key == "Backspace"){
+      if(p != ""){
+        document.getElementById(p).focus();
+      }
+    }
+    console.log(length);
+  }
 </script>
 <script>
+  function move(e,p,c,n){
+    var length = document.getElementById(c).value.length;
+    var maxlength = document.getElementById(c).getAttribute("maxlength");
+    if(length==maxlength){
+      if(n != ""){
+        document.getElementById(n).focus();
+
+      }
+      
+    }
+
+    if(e.key == "Backspace"){
+      if(p != ""){
+        document.getElementById(p).focus();
+      }
+    }
+    console.log(length);
+  }
+  
+
+
   if("{{disabled}}" == 'True'){
     document.getElementById('name').value= "{{name}}";
     document.getElementById('name').disabled= "true";
