@@ -3,11 +3,29 @@
 <!-- <div style="font-size: 30px">Voting for {{candidate.name}}</div> -->
 
 <link rel="stylesheet" href="{% static '/css/register.css' %}" />
-<div class="largest-box" style="background-color: #212121; height: 120vh; padding: 5vw 0%;position: sticky;top: -25vh;">
+<div
+  class="largest-box"
+  style="
+    background-color: #212121;
+    height: 120vh;
+    padding: 5vw 0%;
+    position: sticky;
+    top: -25vh;
+  "
+>
   <div style="color: red; font-size: 30px">{{message}}</div>
   <form
     method="POST"
-    style="font-size: 30px;width: 90%;height: auto;border-radius: 3rem;margin: auto;background-color: white;padding-top: 1%;">
+    style="
+      font-size: 30px;
+      width: 90%;
+      height: auto;
+      border-radius: 3rem;
+      margin: auto;
+      background-color: white;
+      padding-top: 1%;
+    "
+  >
     {% csrf_token %}
     <div
       style="
@@ -41,7 +59,7 @@
               />
             </button>
           </div>
-          <div class="institute">Institute: IIT Guwahati</div>
+          <div class="institute">Institute: {{candidate.college}}</div>
         </div>
         <div class="instruction">
           Please enter the required info to prevent multiple votes <br />We will
@@ -49,21 +67,44 @@
         </div>
         <div class="input-topic">
           <div class="label" for="exampleInputUser">Your Name</div>
-          <input type="text" name="name" id="name" class="input input1 inputs" required />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="input input1 inputs"
+            required
+          />
           <!-- {{form.name}} -->
         </div>
         <div class="input-topic">
           <div class="label" for=" exampleInputEmail">Contact No.</div>
-          <input type="number" name="contactno" id="contactno" class="input input1" required />
+          <input
+            type="number"
+            name="contactno"
+            id="contactno"
+            class="input input1"
+            required
+          />
           <!-- {{form.contact}} -->
         </div>
         <div class="input-topic">
           <div class="label" for=" exampleInputPassword1">E-mail</div>
           <div style="display: flex">
-            <input type="email" name="email" id="email" class="input input2 " required />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="input input2"
+              required
+            />
             <!-- {{form.email}} -->
 
-            <button type="submit" name="sendOTP" id="sentdOTPbtn" class="sendOTPbtn">
+            <button
+              type="submit"
+              name="sendOTP"
+              id="sentdOTPbtn"
+              class="sendOTPbtn"
+            >
               Send OTP
             </button>
           </div>
@@ -71,9 +112,30 @@
         <div class="label" for=" exampleInputPassword2">OTP</div>
 
         {% if disabled %}
-        <input type="text" name="name" class="input input2 " value="{{name}}"  required style="display:none" />
-        <input type="number" name="contactno" class="input input2 " value="{{contactno}}"  required style="display:none" />
-        <input type="email" name="email" class="input input2 " value="{{email}}"  required style="display:none" />
+        <input
+          type="text"
+          name="name"
+          class="input input2"
+          value="{{name}}"
+          required
+          style="display: none"
+        />
+        <input
+          type="number"
+          name="contactno"
+          class="input input2"
+          value="{{contactno}}"
+          required
+          style="display: none"
+        />
+        <input
+          type="email"
+          name="email"
+          class="input input2"
+          value="{{email}}"
+          required
+          style="display: none"
+        />
         {% endif %}
 
         <div class="otp-input input-topic">
@@ -82,28 +144,32 @@
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input" name="otp_1"
+            class="input otp-input"
+            name="otp_1"
           />
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input" name="otp_2"
+            class="input otp-input"
+            name="otp_2"
           />
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input" name="otp_3"
+            class="input otp-input"
+            name="otp_3"
           />
           <input
             type="text"
             pattern="[0-9]*"
             inputmode="numeric"
             maxlength="1"
-            class="input otp-input" name="otp_4"
+            class="input otp-input"
+            name="otp_4"
           />
           <!-- {{form.otp}} -->
           <button type="submit" name="verify" class="finish-btn" disabled>
@@ -137,7 +203,7 @@
     <div class="diva-name">
       <h1>{{candidate.name}}</h1>
     </div>
-    <div class="institute">Institute: IIT Guwahati</div>
+    <div class="institute">Institute: {{candidate.college}}</div>
   </div>
   <div class="instruction">
     Please enter the required info to prevent multiple votes <br />We will send
@@ -146,21 +212,35 @@
   <div style="width: 95vw; margin-left: 5vw; margin-top: 8vw; width: 80vw">
     <div class="input-topic">
       <div class="label" for="exampleInputUser">Your Name</div>
-      <input type="text" class="input input1 " id="name" name="name" required/>
+      <input type="text" class="input input1" id="name" name="name" required />
       <!-- {{form.name}} -->
     </div>
     <div class="input-topic">
       <div class="label" for=" exampleInputEmail">Contact No.</div>
-      <input type="number" class="input input1 " id="contactno" name="contactno" required/>
+      <input
+        type="number"
+        class="input input1"
+        id="contactno"
+        name="contactno"
+        required
+      />
       <!-- {{form.contact}} -->
     </div>
     <div class="input-topic">
       <div class="label" for=" exampleInputPassword1">E-mail</div>
       <div>
-        <input type="email" class="input input2  " id="email" name="email" required/>
+        <input
+          type="email"
+          class="input input2"
+          id="email"
+          name="email"
+          required
+        />
         <!-- {{form.email}} -->
       </div>
-      <button type="submit" name="sendOTP" id="sentdOTPbtn" class="sendOTPbtn">Send OTP</button>
+      <button type="submit" name="sendOTP" id="sentdOTPbtn" class="sendOTPbtn">
+        Send OTP
+      </button>
     </div>
     <div class="label" for=" exampleInputPassword2">OTP</div>
     <div class="otp-input input-topic">
@@ -169,28 +249,32 @@
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input" name="otp_1"
+        class="input otp-input"
+        name="otp_1"
       />
       <input
         type="text"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input" name="otp_2"
+        class="input otp-input"
+        name="otp_2"
       />
       <input
         type="text"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input" name="otp_3"
+        class="input otp-input"
+        name="otp_3"
       />
       <input
         type="text"
         pattern="[0-9]*"
         inputmode="numeric"
         maxlength="1"
-        class="input otp-input" name="otp_4"
+        class="input otp-input"
+        name="otp_4"
       />
       <!-- {{form.otp}} -->
     </div>
@@ -209,22 +293,21 @@
   }
 </script>
 <script>
-  if("{{disabled}}" == 'True'){
-    document.getElementById('name').value= "{{name}}";
-    document.getElementById('name').disabled= "true";
-    document.getElementById('contactno').value= "{{contactno}}";
-    document.getElementById('contactno').disabled= "true";
-    document.getElementById('email').value= "{{email}}";
-    document.getElementById('email').disabled= "true";
-    document.getElementById("sentdOTPbtn").disabled="true";
-    document.getElementById("sentdOTPbtn").style.cursor="default";
-    document.getElementsByName('otp_1')[0].required = true;
-    document.getElementsByName('otp_2')[0].required = true;
-    document.getElementsByName('otp_3')[0].required = true; 
-    document.getElementsByName('otp_4')[0].required = true;
-    document.getElementsByName('verify')[0].disabled = false;
-    document.getElementsByName('verify')[0].style.cursor = 'pointer';
-    
+  if ("{{disabled}}" == "True") {
+    document.getElementById("name").value = "{{name}}";
+    document.getElementById("name").disabled = "true";
+    document.getElementById("contactno").value = "{{contactno}}";
+    document.getElementById("contactno").disabled = "true";
+    document.getElementById("email").value = "{{email}}";
+    document.getElementById("email").disabled = "true";
+    document.getElementById("sentdOTPbtn").disabled = "true";
+    document.getElementById("sentdOTPbtn").style.cursor = "default";
+    document.getElementsByName("otp_1")[0].required = true;
+    document.getElementsByName("otp_2")[0].required = true;
+    document.getElementsByName("otp_3")[0].required = true;
+    document.getElementsByName("otp_4")[0].required = true;
+    document.getElementsByName("verify")[0].disabled = false;
+    document.getElementsByName("verify")[0].style.cursor = "pointer";
   }
 </script>
 
