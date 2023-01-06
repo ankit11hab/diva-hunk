@@ -25,6 +25,7 @@ def divaHunkList(request):
         'message': "",
         'isdiva':False,
     }
+    # We need need to get form data to render the context
     searchquery = request.GET.get('search')
     if searchquery!=None and searchquery!="":
         searchDiva=Diva.objects.filter(name__icontains=searchquery)

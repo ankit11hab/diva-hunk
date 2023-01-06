@@ -572,6 +572,7 @@
   <br /><br />
 
   <div class="content-container">
+    {% comment %} TODO we need to change the form behaviour here {% endcomment %}
     <form method="GET" action="{% url 'list' %}" id="searchbox">
       {% csrf_token %}
       <input
