@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/deb32b91d90407c8527dfeaac14994d6?family=Aileron);
+@import url('https://fonts.cdnfonts.com/css/circular-std');
 .footer-body-wide {
     height: 66vh;
     position: sticky;
@@ -18,7 +18,7 @@
 
 .contacts-wide {
     color: #fefcf0;
-    font-family: "Aileron";
+    font-family: 'Circular Std', sans-serif;
     text-align: right;
     align-items: flex-end;
     font-size: 100%;
@@ -70,7 +70,7 @@
     }
     .contacts-wide {
         align-items: flex-start;
-        font-family: "Aileron";
+        font-family: 'Circular Std', sans-serif;
         text-align: left;
         margin-top: 10%;
         margin-left: 7%;
