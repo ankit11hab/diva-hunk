@@ -107,7 +107,7 @@ def divaRegistration(request, pk):
             candidate.votes+=1
             candidate.save()
             find.update(diva=candidate)
-        return redirect('thanks')
+        return redirect('thanks_hunk')
     else:
         form = VoterRegisterForm()
     context.update(form=form)
@@ -171,7 +171,7 @@ def hunkRegistration(request, pk):
             candidate.votes+=1
             candidate.save()
             find.update(hunk=candidate)
-        return redirect('thanks')
+        return redirect('thanks_diva')
     else:
         form = VoterRegisterForm()
     context.update(form=form)
