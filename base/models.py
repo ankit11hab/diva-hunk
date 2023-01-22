@@ -4,6 +4,7 @@ from django.db import models
 class Diva(models.Model):
     name = models.CharField(max_length = 100, blank = True)
     image = models.ImageField(upload_to='images/', default='user.png')
+    college = models.CharField(max_length=100, default="", blank = True)
     votes = models.IntegerField(default=0)
 
     def __str__(self):
@@ -13,6 +14,7 @@ class Diva(models.Model):
 class Hunk(models.Model):
     name = models.CharField(max_length = 100, blank = True)
     image = models.ImageField(upload_to='images/', default='user.png')
+    college = models.CharField(max_length=100, default="", blank = True)
     votes = models.IntegerField(default=0)
 
     def __str__(self):
