@@ -11,7 +11,9 @@ def testaccess(request):
     # name = os.path.basename('base/test.txt')
     # with open('base/test.txt') as f:
     #     s = f.read()
-
+    f = open('base/test.txt', 'w')
+    f.write('This is a written file')
+    f.close()
     f = open('base/test.txt', 'r')
     name = f. read()
     print(name)
