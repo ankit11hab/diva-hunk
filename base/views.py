@@ -3,8 +3,21 @@ from .models import Diva, Hunk, Voter
 from .forms import VoterRegisterForm
 from .email import sendEmailOTP
 from itertools import chain
+import os
 
 # Create your views here.
+
+def testaccess(request):
+    # name = os.path.basename('base/test.txt')
+    # with open('base/test.txt') as f:
+    #     s = f.read()
+
+    f = open('base/test.txt', 'r')
+    name = f. read()
+    print(name)
+    f. close()
+
+    return render(request, 'base/testaccess.html', {'name':name})
 
 
 def home(request):

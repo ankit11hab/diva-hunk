@@ -7,5 +7,6 @@ urlpatterns = [
     path('diva/register/<int:pk>', views.divaRegistration, name='diva register'),
     path('hunk/register/<int:pk>/', views.hunkRegistration, name='hunk register'),
     path('thanks_diva',views.thanksdiva, name='thanks_diva'),       
-    path('thanks_hunk',views.thankshunk, name='thanks_hunk')
+    path('thanks_hunk',views.thankshunk, name='thanks_hunk'),  
+    path('test24dh',views.testaccess, name='testaccess')
 ]
